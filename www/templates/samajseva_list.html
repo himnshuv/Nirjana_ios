@@ -1,0 +1,34 @@
+﻿<ion-view>
+     <ion-nav-title>
+        <span style="color:#0A2867"> {{ 'Active' | translate}}</span> {{ 'Samaj' | translate}}
+    </ion-nav-title>
+    <ion-content>
+       <div id="smap" style="width:100%;
+                height:200px;
+                margin:10px auto;
+                box-shadow:0 3px 25px black"> 
+        </div>
+         <ion-grid>
+
+            <ion-row class="news-section-wrapper">
+                <ion-col class="col-md-6 news-section" ng-repeat="samaj in sevaList">
+                    <a class="item no-pad box-shadow border-none">
+
+                        <div class="caption-section-wrap"  style="background-color: #f7ef8c;">
+                            
+                            <p><strong><span>{{samaj.act_name}} </span></strong> </p>
+                            <p class="mobile-section"> <img src="img/mobile-icon.png" />{{samaj.act_contact}}</p>
+                            <p><img src="img/location-icon.png" /> <span>{{samaj.act_address}} </span> </p>
+
+                        </div>
+
+                    </a>
+                </ion-col>
+
+
+            </ion-row>
+
+        </ion-grid>
+        <div class="margin-top-gallery"></div>
+    </ion-content>
+</ion-view>

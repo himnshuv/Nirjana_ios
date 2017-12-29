@@ -1,0 +1,24 @@
+﻿<ion-view view-title="{{ 'Gallery' | translate}}">
+   
+
+        <ion-slide-box class="gallery-full-image">
+            <ion-content>
+                <ion-slide ng-repeat="img in gallerylist">
+                    <div class="box blue"><img ng-src="{{img.larg_image}}" style="width:100%;height:100%;" /></div>
+                  
+                    <div class="list">
+                        <div class="item item-button-right">
+                              <h3 class="post-by">Posted by :{{img.name}}</h3>
+                            <button ng-click="blockImage(img.gallery_id)" class="button button-outline button-assertive">
+                                Block Post
+                            </button>
+                        </div>
+                        </div>
+
+</ion-slide>
+                <div class="margin-top-gallery"></div>
+            </ion-content>
+        </ion-slide-box>
+
+   
+</ion-view>

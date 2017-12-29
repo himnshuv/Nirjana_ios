@@ -1,0 +1,36 @@
+﻿<ion-view view-title="{{ 'JobAvailable' | translate}}">
+
+
+    <ion-content class="bg-gray" ng-controller="DemoController">
+   
+
+        <div class="add-business-btn">
+            <a href="#/app/add-job"><i class="fa fa-plus" aria-hidden="true"></i> {{ 'AddJob' | translate}}</a>
+        </div>
+
+
+        <ion-row class="job-detail-wrap">
+
+            <ion-col>
+                <a ng-repeat="job in jobList "
+                   ng-click="openDetailPage(event)"
+                   class="item no-pad box-shadow border-none mrg-15">
+
+                    <div class="caption-section-wrap1">
+                        <h5>Need {{ job.job_position }}</h5>
+                        <p>{{ job.company_name }} </p>
+                        <p><i class="fa fa-calendar" aria-hidden="true"></i> {{ job.experiance_required }} </p>
+                        <p><i class="fa fa-map-marker" aria-hidden="true"></i> {{ job.job_location }} </p>
+                        <h4 ng-click="apply(job.job_id)" ng-hide="job.isApplied"><strong>Apply Now</strong></h4>
+                        <h4 style="color:#008000;" ng-hide="job.isNotApplied"><strong>Applied</strong></h4>
+                    </div>
+
+                </a>
+            </ion-col>
+        </ion-row>
+        <div class="margin-top-gallery"></div>
+
+    </ion-content>
+
+
+</ion-view>

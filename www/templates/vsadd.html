@@ -1,0 +1,61 @@
+<ion-view title="vihar Stay">
+
+    <ion-content padding>
+
+        <ng-form name="addViharForm" novalidate>
+            <div class="list login-wrap">
+
+                <label class="item item-input item-stacked-label border-none form-group">
+                    <span class="input-label">Member Name</span>
+                    <input type="text" name="name" placeholder="Member Name" ng-model="data.name" required>
+                </label>
+
+                <label class="item item-input item-stacked-label border-none form-group">
+                    <span class="input-label">Contact Number</span>
+                    <input type="number" name="contact" placeholder="+91 98xxxxxxxx" ng-model="data.contact" ng-minlength="10" ng-maxlength="10" required>
+                </label>
+
+                <label class="item item-input item-stacked-label border-none form-group">
+                    <span class="input-label">Place Name</span>
+                    <input id="pac-input" type="text" placeholder="Search Location" data-tap-ena="false" ng-model="data.location">
+                </label>
+
+                <label class="item item-input item-stacked-label border-none form-group">
+                    <span class="input-label">Jain Family Around</span>
+                    <input type="number" name="jainfamilycount" placeholder="Enter jain families are near by you" ng-model="data.jainfamilies" required>
+                </label>
+
+                <ion-list>
+                    <ion-item class="border-none pad-more">
+                        <h3>Placed Added</h3>
+                        <div class="stanak-wrap ad-location">
+                            <ion-label><img src="img/namskar-icon.png" /> <span>Nashik Nayantra estate</span> </ion-label>
+                            <ion-toggle></ion-toggle>
+                        </div>
+
+                        <div class="stanak-wrap ad-location">
+                            <ion-label><img src="img/namskar-icon.png" /> <span>Nashik Nayantra estate</span> </ion-label>
+                            <ion-toggle></ion-toggle>
+                        </div>
+                    </ion-item>
+                </ion-list>
+
+                <div class="assertive" ng-show="noerror">
+                    <p ng-show="addViharForm.name.$error.required && addViharForm.name.$dirty">* Name is required</p>
+                    <p ng-show="addViharForm.location.$error.required && addViharForm.location.$dirty">* Location is required</p>
+                    <p ng-show="addViharForm.contact.$error.required && addViharForm.contact.$dirty">* Contact is required</p>
+                    <p ng-show="addViharForm.contact.$error.maxlength">* Please Enter valid mobile number</p>
+                    <p ng-show="addViharForm.contact.$error.minlength">* Please Enter valid mobile number</p>
+                    <p ng-show="errorTextVisible">{{errorMessage}}</p>
+
+                </div>
+
+                <div class="padding">
+                    <a class="button button-block button-positive login-btn" ng-click="saveDetailsOnServer()"> Add Member </a>
+                </div>
+
+            </div>
+        </ng-form>
+        <div class="margin-top-gallery"></div>
+    </ion-content>
+</ion-view>

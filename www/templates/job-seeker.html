@@ -1,0 +1,57 @@
+﻿<ion-view view-title="{{ 'JobSeekers' | translate}}">
+    <ion-content>
+
+        <div class="list login-wrap">
+
+            <label class="item item-input item-stacked-label border-none form-group">
+                <span class="input-label">{{ 'Name' | translate}}</span>
+                <input type="text" name="name" placeholder="{{ 'Name' | translate}}" ng-model="data.name" required>
+            </label>
+
+
+            <label class="item item-input item-stacked-label border-none form-group">
+                <span class="input-label">{{ 'Email' | translate}}</span>
+                <input type="email" name="email" placeholder="demoaccount@gmail.com" ng-model="data.emailID" required>
+            </label>
+
+            <label class="item item-input item-stacked-label border-none form-group">
+                <span class="input-label">{{ 'JainReligion' | translate}}</span>
+                <select class="state-section" name="religion" ng-model="data.religionID" required>
+                    <option value="" selected="selected">{{ 'SelectReligion' | translate}}</option>
+                    <option>{{ 'Yes' | translate}}</option>
+                    <option>{{ 'No' | translate}}</option>
+                </select>
+            </label>
+
+
+            <label class="item item-input item-stacked-label border-none form-group">
+                <span class="input-label">{{ 'Experiance' | translate}}</span>
+                <input type="number" name="experiance" placeholder="{{ 'Experiance' | translate}}" ng-model="data.experiance">
+            </label>
+
+            <label class="item item-input item-stacked-label border-none form-group">
+                <span class="input-label">{{ 'WorkDetails' | translate}}</span>
+                <textarea rows="5" class="txtarea-border-bottom" name="{{ 'WorkDetails' | translate}}" placeholder="{{ 'Writewords' | translate}}" ng-model="data.work"></textarea>
+            </label>
+
+            <div class="assertive">
+                <!---- <p ng-show="myForm.memberName.$error.required && myForm.memberName.$dirty">* Name is required</p>-->
+                <!--<p ng-show="myForm.emailId.$invalid && myForm.emailId.$dirty">* Username must be an email address</p>-->
+                <!----<p ng-show="myForm.mobileNo.$invalid && myForm.mobileNo.$dirty">* Invalid Mobile Number</p>>-->
+                <!----<p ng-show="myForm.password.$error.required && myForm.password.$dirty">* Password is required</p>>-->
+                <!---- <p ng-show="myForm.password.$error.minlength && myForm.password.$dirty">* Password must be longer than 6 characters</p>>-->
+                <p ng-show="errorTextVisible">{{errorText}}</p>
+            </div>
+
+
+
+            <div class="padding">
+                <a class="button button-block button-positive login-btn" ng-click="saveDetailsOnServer()">{{ 'Register' | translate}} </a>
+            </div>
+
+        </div>
+
+
+        <div class="margin-top-gallery"></div>
+    </ion-content>
+</ion-view>

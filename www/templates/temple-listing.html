@@ -1,0 +1,65 @@
+﻿<ion-view>
+     <ion-nav-title>
+        <span style="color:#0A2867"> {{ 'Temple' | translate}} </span>{{ 'Sthanak' | translate}}
+        <!-- <a href="#/app/coming-soon"> <img src="img/info_icon.png"; style="float:right; margin-top:13px" height="20" width="20" /></a> -->
+    </ion-nav-title>
+    <ion-content>
+        <div class="search-wrapper">
+            <div class="item item-input-inset auto-search-section-1" style='overflow: visible;z-index:4;'>
+                <input id="pac-input-temple-search" type="text" placeholder="{{ 'Search' | translate}} {{ 'Location' | translate}}" data-tap-disabled="true" ng-change="disableTap()" ng-model="search">
+                <a ng-click="searchList(search)" class="search-icon"><i class="fa fa-search" aria-hidden="true"></i></a>
+            </div>
+         <div class="map-title" id="map-temple-location" data-tap-disabled="true" style="width:100%;
+    height:200px;
+    margin:10px auto;
+    box-shadow:0 3px 25px black"></div>    
+
+          <!--  <div class="filter">
+                <p><a href="#/app/temple-tracking">Filter <i class="fa fa-filter" aria-hidden="true"></i></a></p>
+            </div> -->
+        </div>
+        
+        <div class="add-vihar-btn > a">
+                <a href="#/app/add-temple"><i class="fa fa-plus" aria-hidden="true"style="color:orange;padding:5px;max-height:10px" ></i>{{'AddTemple' | translate}}</a>
+               <a href="#/app/my-temple-listing"><i class="fa fa-filter" aria-hidden="true" style="color:orange;padding:5px"></i>{{'MytempleListing' | translate}}</a>
+        </div>
+        <div class="assertive1" ng-show="noerror">
+            <p ng-show="errorTextVisible">{{errorMessage}}</p>
+          </div>
+        <ion-grid>
+
+           
+            <ion-row class="news-section-wrapper">
+                <ion-col ng-repeat="temple in templelists" class="col-md-6 news-section">
+                    <a class="item no-pad box-shadow border-none">
+                        <div ng-click="openTempleDetail(temple)" >
+                        <div class="mn-ht">
+                            <img class="news-main-img" style="height:120px" ng-src="{{temple.temple_photo  ? temple.temple_photo : 'img/default-img.jpg'}}" />
+                        </div>
+
+                        <div class="caption-section-wrap" style="background-color: #f7ef8c;">
+                            <h4>{{ temple.temple_name }}</h4>
+                           
+                            <p><img src="img/location-icon.png" /> <span> {{temple.location}} </span> </p>
+                            
+                        </div>
+                            </div>
+                        <div style="background-color: #f7ef8c;">
+                            <p style="width:100%">
+                              
+                                <img ng-if="temple.food_available== 'Yes'" ng-src="http://nirjaraap.com/admin/images/food-available.svg" height="20" width="20" />
+                                <img ng-if="temple.food_available== 'Yes'" ng-src="http://nirjaraap.com/admin/images/stay-available.svg" height="20" width="20" />
+                                <img  ng-if="temple.food_available!= 'Yes'"  ng-src="img/blankimagee.png" height="20" width="20" />
+                                <img ng-if="temple.food_available!= 'Yes'" ng-src="img/blankimagee.png" height="20" width="20" />
+                                <img style="top:0px;float:right  " ng-click="openTempleEdit(temple)" ng-src="img/edit.png" height="20" width="20" />
+                            </p>
+                        </div>
+                    </a>
+                </ion-col>
+
+            </ion-row>
+
+        </ion-grid>
+        <div class="margin-top-gallery"></div>
+    </ion-content>
+</ion-view>

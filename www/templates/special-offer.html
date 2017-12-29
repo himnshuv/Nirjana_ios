@@ -1,0 +1,15 @@
+﻿<ion-view view-title="{{ 'SpecialOffers'| translate}}">
+    <ion-content>
+        <div ng-repeat="offer in specialOfferList" class="col-48 b-service-icon border-none">
+            <a ng-click="openDetailPage(offer)" class="mx-height">
+                <div class="mn-ht offer-img">
+                    <img class="news-main-img" ng-src="{{offer.image  && offer.image || 'img/default-img.jpg'}}" />
+                </div>
+                <p> {{offer.title}} </p>
+            </a>
+        </div>
+     
+        <div class="margin-top-gallery"></div>
+
+    </ion-content>
+</ion-view>

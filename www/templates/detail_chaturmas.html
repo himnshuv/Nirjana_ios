@@ -1,0 +1,29 @@
+<ion-view view-title="{{'Chaturmas' | translate}}">
+    <ion-nav-bar class='bar-light'>
+        <ion-nav-back-button></ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content>
+      <div class="list card">
+
+  
+
+   <div class="item item-text-wrap">
+   {{chaturmas.guru_name}}
+  </div>
+  <div class="item item-body">
+    
+   <h4>{{chaturmas.sub_group}}</h4>
+                           
+                            <p class="mobile-section"> <img src="img/mobile-icon.png" />{{chaturmas.contact_number ? chaturmas.contact_number :'Number not available' }}</p>
+                            <p><img src="img/location-icon.png" /> <span>{{chaturmas.location}} </span> </p>
+  </div>
+
+</div>
+        <div class="margin-top-gallery"></div>
+
+    </ion-content>
+
+</ion-view>
+
+
+

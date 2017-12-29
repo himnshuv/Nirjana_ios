@@ -1,0 +1,28 @@
+﻿<ion-view>
+    <ion-nav-title>
+        <span style="color:#0A2867"> {{ 'Bhagwant' | translate}} </span> {{ 'Tracking' | translate}}
+    </ion-nav-title>
+    <ion-content>
+         <div id="gap"  style="width:100%;
+    height:200px;
+    margin:10px auto;
+    ">
+            </div>
+        
+        <ion-list>
+
+            <ion-item class="guru-track box-shadow" ng-repeat="sampraday in sampradayList">
+                <h3 style="color:#002866; padding-top: 2px;">{{sampraday.group_name}}</h3>
+                <div class="stanak-wrap" ng-repeat="subGroup in sampraday.sub_group_data" style="border-bottom: 0.5px solid gray;">
+                    <ion-label><img src="img/namskar-icon.png" /> <span>{{ subGroup.sub_group_name | capitalize:'all' }}</span> </ion-label>
+                    <ion-toggle ng-model="subGroup.isChecked" ng-change="setsubGroupTrackingStatus(subGroup.isChecked,sampraday.main_group_id,subGroup.sub_group_id)"></ion-toggle>
+                </div>
+            </ion-item>
+
+       
+            
+        </ion-list>
+        <div class="margin-top-gallery"></div>
+    </ion-content>
+
+</ion-view>

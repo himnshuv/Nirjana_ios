@@ -1,0 +1,24 @@
+{
+  "name": "io.cordova.myapp01e9b4",
+  "app_id": "",
+  "gulpDependantTasks": [
+    "sass"
+  ],
+  "gulpStartupTasks": [
+    "watch"
+  ],
+  "type": "ionic1",
+  "watchPatterns": [
+    "scss/**/*",
+    "www/**/*",
+    "!www/lib/**/*",
+    "!www/**/*.map"
+  ],
+  "integrations": {
+    "cordova": {},
+    "gulp": {}
+  },
+  "gulp": {
+    "enabled": false
+  }
+}

@@ -1,0 +1,43 @@
+﻿<ion-view>
+    <ion-nav-title>
+        <span style="color:#0A2867"> {{ 'Anupurvi'| translate}} </span>
+    </ion-nav-title>
+    <ion-nav-bar class='bar-light'>
+        <ion-nav-back-button></ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content>
+        <div class="calnder-table">
+            <table>
+                <tbody>
+                    <tr ng-repeat="row in currentSlide.slide">
+                  <!--  <td ng-click="showCurrentMantra(col,currentSlide.slideNo,$index)" ng-class="{positive: currentNum == currentSlide.slideNo+''+$index}" ng-repeat="col in row">{{ col }}</td>-->
+                        <td  ng-repeat="col in row">{{ col }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+            <div class="button-section">
+                <div class="btn1" ng-show="showPrev">
+                    <a ng-click="setCurrentSlide(currentSlide.slideNo-1)">{{ 'Prev' | translate}}</a>
+                </div>
+                <div class="btn1" ng-show="showNext">
+                    <a ng-click="setCurrentSlide(currentSlide.slideNo+1)">{{ 'Next' | translate}}</a>
+                </div>
+                <div class="btn1">
+                    <a ng-click="setCurrentSlide(1)"><i class="fa fa-home" aria-hidden="true"></i></a>
+                </div>
+               
+            </div>
+            <div class="page-number">
+                <p> {{currentSlide.slideNo}} </p>
+            </div>
+            <div class="ghyan-img">
+                <img src="img/gyaan-img.png" />
+            </div>
+
+
+            <div class="margin-top-1"></div>
+</ion-content>
+</ion-view>
+

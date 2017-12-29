@@ -1,0 +1,46 @@
+﻿<ion-view>
+      <ion-nav-title>
+        <span style="color:#0A2867"> {{ 'My' | translate}} </span> {{ 'Posts' | translate}}
+    </ion-nav-title>
+    <ion-nav-bar class='bar-light'>
+        <ion-nav-back-button></ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content>      
+
+        <ion-row class="news-section-wrapper" style="padding-top:0 !important;">
+               <ion-col ng-repeat="tapasvi in tapasviList | filter:{ tapassya: '!0'}">
+        <div class="list">
+            <a class="item tapasvi-sukh-pro">
+                <div class="detail">
+             
+                <h2>{{tapasvi.tapasvi_name}}</h2>
+                <p class="mrg0"><strong>{{ 'Tap' | translate}} :</strong> {{tapasvi.tapassya_name}} </p>
+               <p class="mrg0"><strong>{{ 'Date' | translate}} :</strong> {{tapasvi.tapassya_date}} </p>
+
+                </div>
+                <ul class="other-option" ng-if="tapasvi.liked">
+                    <li><img src="img/namskar-icon-like.png"  ng-click="postLikes(tapasvi.tapasvi_id)"/><p class="txt-112" ng-click="openLikes(tapasvi.tapasvi_id)">{{tapasvi.total_likes}}</p></li>
+                    <li><img src="img/chat-icon.png" ng-click="openCommentPage(tapasvi.tapasvi_id)"/><p class="txt-112">{{tapasvi.total_comment}}</p></li>
+                    <li><img src="img/rupee-icon.png" /></li>
+                </ul>
+                 <ul class="other-option" ng-if="!tapasvi.liked">
+                    <li><img src="img/icon/d4-blue.svg" style="background-color:#fff" ng-click="postLikes(tapasvi.tapasvi_id)"/><p class="txt-112">{{tapasvi.total_likes}}</p></li>
+                    <li><img src="img/chat-icon.png" ng-click="openCommentPage(tapasvi.tapasvi_id)"/><p class="txt-112">{{tapasvi.total_comment}}</p></li>
+                    <li><img src="img/rupee-icon.png" /></li>
+                </ul>
+                <ul class="other-option">
+                    <li><p class="mrg0"  ng-click="openLikes(tapasvi.tapasvi_id)"> {{ 'Anumodna' | translate}}</p></li>
+                    <li><p class="mrg0"> {{ 'Comments' | translate}}</p></li>
+                    <li><p class="mrg0"> {{ 'Prabhavna' | translate}}</p></li>
+                </ul>
+            </a>
+        </div>
+                     </ion-col>
+
+            </ion-row>
+
+        <div class="margin-top-gallery"></div>
+    </ion-content>
+</ion-view>
+ 
+              

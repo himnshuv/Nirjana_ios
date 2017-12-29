@@ -1,0 +1,20 @@
+﻿<ion-view>
+    <ion-nav-title style="font-size:14px;font-weight:bold;font-family: 'ARESSENCE'!important">
+        <span style="color:#0A2867"> {{ 'BusinessDet' | translate}} </span> {{ 'Package' | translate}}
+    </ion-nav-title>
+    <ion-nav-bar class='bar-light'>
+        <ion-nav-back-button></ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content class="bg-gray">
+        <div class="package-wrapper">
+           <a ng-repeat="package in packageList" ng-click="openAddBusinessPage(package.package_id,package.package_title,package.cost)">
+                <div class="pack3 box-shadow">
+                    <h3>{{package.package_title}} </h3>
+                    <p>{{package.package_description}}</p>
+                    <p> ₹ {{package.cost}}/- </p>
+                </div>
+            </a>
+     </div>
+        <div class="margin-top-gallery"></div>
+    </ion-content>
+</ion-view>

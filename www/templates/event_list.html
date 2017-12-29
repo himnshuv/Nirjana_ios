@@ -1,0 +1,35 @@
+﻿<ion-view view-title="{{ 'Events' | translate}}">
+    <ion-content>
+
+ <ion-row class="news-section-wrapper" style="padding-top:0 !important;">
+               <ion-col ng-repeat="event in eventList "
+                   ng-click="openDetailPage(event)">
+        <div class="list">
+            <a class="item event-sukh-pro img">
+                <div class="detail" ng-click="openDetailPage(tapasvi.tapasvi_id)" style="background-color: #f7ef8c;" >
+                <div class="eve-sec1">
+                    <img src="{{ event.event_photo1_small ? event.event_photo1_small : 'img/default-img.jpg' }}">
+                </div>
+                <div class="eve-sec2">
+                    <h2>{{ event.event_title }}</h2>
+                        <p><strong>{{ 'ContactPerson' | translate}} : </strong> {{ event.contact_person }}</p>
+                        <p><strong>{{ 'From' | translate}}  : </strong> {{ event.event_from }} </p>
+                        <p><strong>{{ 'To' | translate}}  : </strong> {{ event.event_to }} </p>
+                        <p><strong>{{ 'Venue' | translate}} : </strong> {{ event.event_venue }} </p>
+                </div>
+                </div>
+              
+                
+            </a>
+        </div>
+                     </ion-col>
+
+            </ion-row>
+
+
+        <div class="margin-top-gallery"></div>
+
+    </ion-content>
+
+
+</ion-view>

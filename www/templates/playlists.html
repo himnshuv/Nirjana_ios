@@ -1,0 +1,308 @@
+<ion-view>
+    <ion-nav-title>
+        <span style="color:#0A2867"> {{ 'Nirjara' | translate}} </span>{{ 'Ap' | translate}}
+         
+            <span style="float:right"> <strong>{{ 'Points' | translate}} :</strong> {{user.points}}</span>
+                        
+    </ion-nav-title>
+    <div style="text-align:center;">
+
+        <ion-content>
+            <div class="welcome-wrapper">
+
+                <div>
+                    <h4 class="business-title">{{ 'Karma' | translate}}</h4>
+                </div>
+                <ion-scroll direction="x" class="wide-as-needed">
+                   
+                     <div class="w-service">
+                        <a class="button button-clear button-positive business-icon-section" href="#/app/guru-bhagawant-tracking"> <div class="b-service-img"><img src="img/icon/d1.svg" height="35" width="35" /></div>  <p class="w-sub-title"> {{ 'JainGuru' | translate}} </p> <p class="w-sub-title"> {{ 'Tracking' | translate}} </p> </a>
+                    </div>
+                    <div class="w-service">
+                        <a class="button button-clear button-positive business-icon-section" href="#/app/vihar-stay"> <div class="b-service-img"><img src="img/icon/d2.svg" height="35" width="35" /></div>  <p class="w-sub-title"> {{ 'Vihar' | translate}} </p><p class="w-sub-title"> {{ 'Stay' | translate}} </p></a>
+                    </div>
+                    <div class="w-service">
+                        <a class="button button-clear button-positive business-icon-section" href="#/app/temple-listing"> <div class="b-service-img"><img src="img/icon/temple-and-sthanak-tracking.svg" height="35" width="35" /></div>  <p class="w-sub-title"> {{ 'Temple' | translate}} </p><p class="w-sub-title"> {{ 'Sthanak' | translate}} </p></a>
+                    </div>
+                    <div class="w-service">
+                        <a class="button button-clear button-positive business-icon-section" href="#/app/tapasvi-sukh-sath"> <div class="b-service-img"><img src="img/icon/d4.svg" height="35" width="35" /></div>  <p class="w-sub-title"> {{ 'tapasvi' | translate}}</p><p class="w-sub-title"> {{ 'Sata' | translate}}</p></a>
+                    </div>
+                    <div class="w-service">
+                        <a class="button button-clear button-positive business-icon-section" href="#/app/varthPachkan"> <div class="b-service-img"><img src="img/icon/d5.svg" height="35" width="35" /></div>  <p class="w-sub-title"> {{ 'Vrath' | translate}} </p><p class="w-sub-title"> {{ 'Pachakan' | translate}} </p></a>
+                    </div>
+                    <div class="w-service">
+                        <a class="button button-clear button-positive business-icon-section" href="#/app/jain-mantras"> <div class="b-service-img"><img src="img/icon/d6.svg" height="35" width="35" /></div>  <p class="w-sub-title">{{ 'Jain' | translate}}</p><p class="w-sub-title">{{ 'Mantras' | translate}}</p></a>
+                    </div>
+                    
+                    <!-- <div class="w-service">
+                        <a class="button button-clear button-positive business-icon-section" href="#/app/donation_page"> <div class="b-service-img"><img src="img/icon/d7.svg" height="35" width="35" /></div>  <p class="w-sub-title"> {{ 'Donation' | translate}}  </p></a>
+                    </div>
+                    <div class="w-service">
+                        <a class="button button-clear button-positive business-icon-section" href="#/app/gyan_shala"> <div class="b-service-img"><img src="img/icon/d8.svg" height="35" width="35" /></div>  <p class="w-sub-title">  {{ 'Jain' | translate}} </p><p class="w-sub-title">  {{ 'Library' | translate}}</p></a>
+                    </div>-->
+                    
+                    <div class="w-service">
+                        <a class="button button-clear button-positive business-icon-section" href="#/app/event_list"> <div class="b-service-img"><img src="img/icon/d10.svg" height="35" width="35" /></div>  <p class="w-sub-title"> {{ 'Events' | translate}}  </p></a>
+                    </div>
+                    <div class="w-service">
+                        <a class="button button-clear button-positive business-icon-section" href="#/app/samajseva_list"> <div class="b-service-img"><img src="img/icon/d11.svg" height="35" width="35" /></div>  <p class="w-sub-title"> {{ 'Active' | translate}}  </p><p class="w-sub-title"> {{ 'Samaj' | translate}}  </p></a>
+                    </div>
+                    <div class="w-service">
+                        <a class="button button-clear button-positive business-icon-section" href="#/app/chaturmas">
+                            <div class="b-service-img"><img src="img/icon/d12.svg" height="35" width="35" /></div>  <p class="w-sub-title">
+                                {{ 'Chaturmas' | translate}}</p>
+                                <p class="w-sub-title"> {{ 'Year2017' | translate}}
+                            </p>
+                        </a>
+                    </div>
+
+
+                </ion-scroll>
+            </div>
+
+
+            <!--Guru traking-->
+
+            <div class="notification" ng-show="gurutraking">
+                <ion-label style="margin-left:5px"><span>{{ 'GuruTracking' | translate}}</span></ion-label>
+                <ion-toggle ng-model="guruisChecked" ng-change="setNotificationStatus(guruisChecked, guruKey)"></ion-toggle>
+            </div>
+
+          <!--  <div class="notification">
+                <a class="button button-clear button-positive" style="margin-left:5px" ng-click="shareTextSms()"><span style="background-color:#ff9800; padding:5px; color: #fff">{{ 'Security' | translate}} {{ 'Alert' | translate}}</span></a>
+                <select style="float:right; margin-right:10px; margin-top:10px;">
+                     <option ng-repeat="contacts in securityList">
+                         {{contacts.contact_no}}
+                     </option>
+                 
+                </select>
+            </div> -->
+
+            <!--gallery section-->
+
+
+            <div class="news-wrapper border-bottom">
+                <div>
+                    <h4 class="news-title">
+                        {{ 'Gallery' | translate}}
+                        <!--   <div class="sec2">
+                    <a ng-click="uploadImage()"> {{ 'Add' | translate}}</a>
+                </div> -->
+                    </h4>
+                </div>
+                <div>
+                    <div width="75%">
+                       
+                        <ion-scroll direction="x" class="wide-as-needed gallery-section1">
+
+                            <ion-slide class="gallery-image">
+
+                                <div>
+                                    <a class="button button-clear button-positive" ng-click="openImaagegallery(img)">
+                                        <div>
+                                            <img ng-src='http://nirjaraap.com/admin/images/gallery/thumb/1505215309997.jpg' />
+                                        </div>
+                                    </a>
+                                </div>
+                            </ion-slide>
+
+                            <ion-slide class="gallery-image">
+
+                                <div>
+                                    <a class="button button-clear button-positive" ng-click="openImaagegallery(img)">
+                                        <div>
+                                            <img ng-src='http://nirjaraap.com/admin/images/gallery/thumb/1505215274417.jpg' />
+                                        </div>
+                                    </a>
+                                </div>
+                            </ion-slide>
+
+                            <ion-slide class="gallery-image">
+
+                                <div>
+                                    <a class="button button-clear button-positive" ng-click="openImaagegallery(img)">
+                                        <div>
+                                            <img ng-src='http://nirjaraap.com/admin/images/gallery/thumb/1505215237506.jpg' />
+                                        </div>
+                                    </a>
+                                </div>
+                            </ion-slide>
+                          
+                            <ion-slide  ng-repeat="img in imagelist" class="gallery-image">
+
+                                <div>
+                                    <a class="button button-clear button-positive" ng-click="openImaagegallery(img)">
+
+                                        <div>
+                                            <img ng-src="{{img.small_image}}" class="box-shadow" />
+                                        </div>
+                                    </a>
+                                </div>
+
+                            </ion-slide>
+                                 
+                            
+                            <ion-slide>
+                                <div class="see-more-btn">
+                                    <a class="button button-clear button-positive" ng-click="openImaagegallery('')">
+
+                                        {{'SeeMore'| translate}}
+
+                                    </a>
+                                </div>
+
+                            </ion-slide>
+                        </ion-scroll>
+                      
+                        <div class="welcome-wrapper-img bevelBox-button">
+                            <a class="greeting-line" style="color: #fff;" ng-click="uploadImage()"> {{ 'Image' | translate}} {{ 'Add' | translate}} </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+           <!--add-->
+
+
+
+            <div class="business-wrapper border-bottom">
+                <div>
+                    <h4 class="wl-title">{{ 'YellowPages' | translate}} {{ 'Business' | translate}}
+                    <img src="img/pin1.png" width="25px" height="20px" style="float:right; margin-right:3px" ng-click="showPopUp()"/>
+                        </h4>
+                </div>
+                <ion-scroll direction="x" class="wide-as-needed business-ht1">
+                    <div class="b-service" ng-repeat="businessCategory in businessCatList">
+                        <a class="button button-clear button-positive business-icon-section" ng-click="openBusinessPage(businessCategory.business_cat_id, businessCategory.business_category)"> <div class="b-service-img"><img ng-src="{{businessCategory.icon ? businessCategory.icon : 'img/default-img.jpg'}}" height="35" width="35" /></div>  <p class="b-sub-title"> {{businessCategory.business_category}} </p></a>
+                    </div>
+                    <div class="b-service">
+                        <a class="button button-clear button-positive business-icon-section" ng-click="openBusinessPage(businessCategory.business_cat_id, businessCategory.business_category)"> <div class="b-service-img"><img ng-src="img/default-img.jpg" height="35" width="35" /></div>  <p class="b-sub-title"> {{ 'SeeMore' | translate}} </p></a>
+                    </div>
+                </ion-scroll>
+
+            </div>
+            
+           <!-- <div class="news-wrapper border-bottom">
+                <marquee id="allAdvmarquee" class="gallery-marquee scroll-marquee"  scrollamount="3">
+                    <div class="news-service" ng-repeat="advnew in addnewList">
+                        <a class="button button-clear button-positive" ng-click="openExternalUrl(advnew.external_link)"><div><img ng-src="{{advnew.adv_banner}}" class="box-shadow" /></div></a>
+                    </div>
+                </marquee>
+            </div> -->
+           <!-- <div class="marquee-section">
+                <marquee><p class="greeting-line">{{ 'hurryup' | translate}}</p></marquee>
+            </div> -->
+
+            <div class="business-wrapper">
+                <div>
+                    <h4 class="wl-title">{{ 'Newpurchase' | translate}}
+                          <img src="img/pin1.png" width="25px" height="20px" style="float:right; margin-right:3px" ng-click="showpurchasePopup()"/>
+                    </h4>
+                </div>
+                <ion-scroll direction="x" class="wide-as-needed business-ht1">
+
+
+                    <div class="b-service">
+                        <a class="button button-clear button-positive business-icon-section" href="#/app/international-holiday"> <div class="b-service-img"><img src="img/international_Holiday.png" /></div>  <p class="b-sub-title">{{ 'Internationholiday' | translate}} </p></a>
+                    </div>
+                    <div class="b-service">
+                        <a class="button button-clear button-positive business-icon-section" href="#/app/car-purchase"> <div class="b-service-img"><img src="img/car.png" /></div>  <p class="b-sub-title"> {{ 'Cars' | translate}} </p></a>
+                    </div>
+                    <div class="b-service">
+                        <a class="button button-clear button-positive business-icon-section" href="#/app/mobile-purchase"> <div class="b-service-img"><img src="img/mobile.png" /></div>  <p class="b-sub-title">{{ 'Mobile' | translate}} </p></a>
+                    </div>
+
+                    <div class="b-service">
+                        <a class="button button-clear button-positive business-icon-section" href="#/app/special-offer"> <div class="b-service-img"><img src="img/p3.png" /></div>  <p class="b-sub-title">{{ 'SpecialOffers' | translate}} </p></a>
+                    </div>
+
+                    <div class="b-service">
+                        <a class="button button-clear button-positive business-icon-section" href="#/app/ipad"> <div class="b-service-img"><img src="img/ipad.png" /></div>  <p class="b-sub-title">{{ 'Ipad' | translate}}</p></a>
+                    </div>
+
+                    <div class="b-service">
+                        <a class="button button-clear button-positive business-icon-section" href="#/app/jewellary"> <div class="b-service-img"><img src="img/jewellary.png" /></div>  <p class="b-sub-title"> {{ 'Jewellery' | translate}}</p></a>
+                    </div>
+
+                </ion-scroll>
+
+            </div>
+
+            <!-- <div class="marquee-section">
+                <marquee><p class="greeting-line">{{ 'hurryup' | translate}}</p></marquee>
+            </div> -->
+
+           <!-- <div class="graph-section bevelBox-calendar">
+                <div>
+                    <h4 class="news-title">{{ 'PopularityGraph' | translate}}</h4>
+                </div>
+                <div class="card" ng-click="openFollowerDetail()">
+
+                    <div class="item item-text-wrap">
+
+                        <canvas id="bar" width="400" height="300"></canvas>
+                    </div>
+                </div>
+            </div> -->
+
+           <!-- add-->
+
+            <div class="job-section pad-25">
+                <div class="col-48 job-seeker">
+                     <p>{{ 'JobSeekers' | translate}}</p>
+                    <a class="" href="#/app/job-seeker"><div><img src="img/job-seekers.jpg" class="box-shadow" /></div></a>
+                </div>
+                <div class="col-48 job-seeker">
+                    <p>{{ 'JobAvailable' | translate}}</p>
+                    <a class="" href="#/app/job-available"><div><img src="img/job-available.jpg" class="box-shadow" /></div></a>
+                </div>
+            </div>
+
+            <!--<div class="graph-section border-bottom second-graph bevelBox-calendar" ng-click="openDetails()">
+                <div>
+                    <h4 class="news-title">{{ 'PopulationGraph' | translate}}</h4>
+                </div>
+                <div class="card" style="margin-top:0;">
+
+                    <div class="item item-text-wrap">
+
+                        <canvas id="bar1" width="400" height="300"></canvas>
+                    </div>
+                </div>
+                  <div>
+                    <h4 class="news-title">{{ 'NotePopulation' | translate}}</h4>
+                </div>
+            </div>
+            <!--
+             <div class="news-wrapper">
+                 <div>
+                     <h4 class="news-title">Daily News</h4>
+                 </div>
+                 <ion-scroll direction="x" class="wide-as-needed new-section-ht">
+                     <div class="news-service" ng-repeat="news in dailyNewsList">
+                         <a class="button button-clear button-positive" ng-click="openNewsDetailPage(news)"><div><img ng-src="{{news.news_photo  && news.news_photo || 'img/p1.png'}}"  class="box-shadow"/></div><p class="category-title"> {{ news.news_title }} </p></a>
+                     </div>
+                     <div class="news-service">
+                         <a class="button button-clear button-positive"><div><img src="img/news-1.png" class="box-shadow" /></div><p class="category-title"> News title goes here </p></a>
+                     </div>
+                 </ion-scroll>
+             </div>
+
+            <div class="graph-section border-bottom second-graph">
+                <marquee id="cityAdvmarquee"  class="gallery-marquee scroll-marquee"  scrollamount="3">
+                    <div class="news-service" ng-repeat="advcity in currenCityAddList">
+                        <a class="button button-clear button-positive" ng-click="openExternalUrl(advcity.external_link)"><div><img ng-src="{{advcity.adv_banner}}" class="box-shadow" /></div></a>
+                    </div>
+                </marquee>
+            </div>-->
+            
+            <div class="margin-top-gallery"></div>
+
+
+        </ion-content>
+    </div>
+</ion-view>
+

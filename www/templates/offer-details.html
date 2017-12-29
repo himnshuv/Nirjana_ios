@@ -1,0 +1,44 @@
+﻿<ion-view view-title="Mr. Bhushan Pawar all Detials here">
+    <ion-content>
+
+        <ion-slide-box on-slide-changed="slideHasChanged($index)">
+            <ion-slide>
+                <div class="box blue"><img ng-src="{{specialOffer.image  ? specialOffer.image : 'img/default-img.jpg'}}" /></div>
+            </ion-slide>
+        
+        </ion-slide-box>
+
+
+
+      <div class="list card">
+            <div class="item item-body">
+                
+                <h2> {{specialOffer.title}}</h2>
+                <p><strong> Offer Valid :</strong> From : {{specialOffer.offer_from}} To : {{specialOffer.offer_to}} </p>
+                <p class="news-cont">
+                   {{specialOffer.description}}
+
+                </p>
+                
+                <p> <strong> Target Users </strong> {{specialOffer.target_user}}</p>
+                <div class="button-bar">
+                    <a class="button twt s-width"><i class="icon ion-social-twitter"></i></a>
+                    <a class="button fb s-width"><i class="icon ion-social-facebook"></i></a>
+                    <a class="button gp s-width"><i class="icon ion-social-googleplus"></i></a>
+                    <a class="button wa s-width"><i class="icon ion-social-whatsapp-outline"></i></a>
+                    <a class="button mail s-width"><i class="icon ion-ios-email-outline"></i></a>
+                    <a class="button sms s-width"><i class="icon ion-android-textsms"></i></a>
+                </div>
+                <div class="padding">
+                    <a class="button button-block button-positive login-btn " ng-disabled="isDisabled" ng-click="saveDetailsOnServer()">Interested? </a>
+                </div>
+            </div>
+           
+        </div>
+
+        <div class="margin-top-gallery"></div>
+    </ion-content>
+</ion-view>
+
+
+

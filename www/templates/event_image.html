@@ -1,0 +1,25 @@
+﻿<ion-view>
+     <ion-nav-title>
+        <span style="color:#0A2867"> {{ 'Add' | translate}} </span> {{ 'Events' | translate}}
+    </ion-nav-title>
+    <ion-nav-bar class='bar-light'>
+        <ion-nav-back-button></ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content>
+    <label class="item item-input item-stacked-label border-none form-group">
+                <span class="input-label">{{ 'Events' | translate}} {{ 'Photo' | translate}}</span>
+               
+            </label>
+    <div class="button button-block button-positive login-btn" ng-click="uploadImage('image1')">
+               {{ 'ChooseFile1' | translate}}
+            </div>
+           <!-- <div class="button button-block button-positive login-btn" ng-click="uploadImage('image2')">
+               {{ 'ChooseFile2' | translate}}
+            </div>
+            <div class="button button-block button-positive login-btn" ng-click="uploadImage('image3')">
+               {{ 'ChooseFile3' | translate}}
+            </div>-->
+
+       <div class="margin-top-gallery"></div>
+</ion-content>
+    </ion-view>

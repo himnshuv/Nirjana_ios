@@ -1,0 +1,72 @@
+﻿<ion-view view-title="{{ 'MobilePurchase'| translate}}">
+    <ion-content>
+
+        <ng-form name="mobileForm" novalidate>
+        <div class="list login-wrap">
+            <label class="item item-input item-stacked-label border-none form-group">
+                <span class="input-label">{{ 'BRAND'| translate}}</span>
+                <select class="state-section" name="brandId" ng-model="data.brandId" ng-change="getModelList(data.brandId)" required>
+                    <option value="" selected="selected">{{ 'SelectBrand'| translate}}</option>
+                    <option ng-repeat="brand in mobileBrandList" value="{{brand.mobile_brand_id}}"> {{brand.mobile_brand_name}} </option>
+
+                </select>
+
+            </label>
+            <label class="item item-input item-stacked-label border-none form-group">
+                <span class="input-label">{{ 'ModelName'| translate}}</span>
+
+                <select class="state-section" name="modelId" ng-model="data.modelId" required>
+                    <option value="" selected="selected">{{ 'SelectModel'| translate}}</option>
+                    <option ng-repeat="model in mobileModelList" value="{{model.mobile_model_id}}"> {{model.mobile_model_name}} </option>
+
+                </select>
+            </label>
+
+            <label class="item item-input item-stacked-label border-none form-group">
+                <span class="input-label">{{ 'City'| translate}}</span>
+
+                <input type="text" name="city" placeholder="{{ 'City'| translate}}" ng-model="data.cityName" required>
+            </label>
+
+            <label class="item item-input item-stacked-label border-none form-group">
+                <span class="input-label">{{ 'From'| translate}}</span>
+                <input type="date" name="from" placeholder="12:30 AM/PM" ng-model="data.fromDate" required>
+            </label>
+
+            <label class="item item-input item-stacked-label border-none form-group">
+                <span class="input-label">{{ 'To'| translate}}</span>
+                <input type="date" name="to" placeholder="12:30 AM/PM" ng-model="data.toDate" required>
+            </label>
+
+
+            <label class="item item-input item-stacked-label border-none form-group">
+                <span class="input-label">{{ 'Contact'| translate}}</span>
+                <input type="number" name="contact" ng-model="data.mobileNo" placeholder="+91 98xxxxxxxx" ng-minlength="10" ng-maxlength="10" required>
+
+
+            </label>
+
+             <div class="assertive" ng-show="noerror">
+                    <p ng-show="mobileForm.brandId.$error.required && mobileForm.brandId.$dirty">*{{ 'Brandisrequired'| translate}}</p>
+                   <p ng-show="mobileForm.modelId.$error.required && mobileForm.modelId.$dirty">* {{ 'Modelisrequired'| translate}}</p>
+                    <p ng-show="mobileForm.city.$error.required && mobileForm.city.$dirty">* {{ 'Cityisrequired'| translate}}</p>
+                    <p ng-show="mobileForm.from.$error.required && mobileForm.from.$dirty">*{{ 'FromDateisrequired'| translate}}</p>
+                    <p ng-show="mobileForm.to.$error.required && mobileForm.to.$dirty">* {{ 'ToDateisrequired'| translate}}</p>
+                    <p ng-show="mobileForm.contact.$error.required && mobileForm.contact.$dirty">*{{ 'Contactrequired'| translate}}</p>
+                   <p ng-show="mobileForm.contact.$error.maxlength">* {{ 'Pleasemobilenumber'| translate}}</p>
+                    <p ng-show="mobileForm.contact.$error.minlength">* {{ 'Pleasemobilenumber'| translate}}</p>
+                    <p ng-show="errorTextVisible">{{errorMessage}}</p>
+
+                </div>
+
+            <div class="padding">
+                <a class="button button-block button-positive login-btn" ng-click="saveDetailsOnServer()">{{ 'SendEnquiry'| translate}} </a>
+            </div>
+
+        </div>
+
+            </ng-form>
+        <div class="margin-top-gallery"></div>
+
+    </ion-content>
+</ion-view>

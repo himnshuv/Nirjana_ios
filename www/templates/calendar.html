@@ -1,0 +1,48 @@
+﻿<ion-view view-title="{{ 'Calendar' | translate }}">
+    <ion-content has-header='true' padding='true' scroll='true' class="ovr-scroll">
+
+        <div class="clndr bevelBox-calendar" ui-calendar="uiConfig.calendar" ng-model="eventSources" calendar="myCalendar">
+</div>
+
+          <div class="assertive2">
+                <h4 style="color:#002866">{{ 'TodayTithi' | translate}}: <b> {{tithi}} </b></h4>
+            </div>
+
+         <div class="samay-section">
+            <div class="samay-1 row-centered" style="background-color:#FF9800; padding:10px;">
+             
+                <div class="samay-wrap1 col-centered" ng-repeat="pachkan in pachkanList | filter: myFilter" style="align-content:center;"ng-if="pachkan.Title == 'Sunset'||pachkan.Title == 'Sunrise'" >
+                    <div class="samay-wrap-title1" style="color:#000080;text-align:center; font-size:18px; width:100%;float:left;" ng-if="pachkan.Title == 'Sunrise'">
+
+                        <img src="img/sunrise.png" style="display:block; margin-right: auto; margin-left: auto; width: 23%;"  />
+                        <p style="float:left; line-height: 28px; width:100%;">{{pachkan.Title}} </p>
+                    </div>
+                    <div class="samay-wrap-title1" style="color:#000080;text-align:center; font-size:18px; width:100%;float:left;" ng-if="pachkan.Title == 'Sunset'">
+
+                        <img src="img/sunset.png" style="display:block; margin-right: auto; margin-left: auto;  width: 23%;" />
+                        <p style="float: left; line-height: 28px; width:100%;">{{pachkan.Title}} </p>
+                    </div>
+                    <div class="samay-wrap-title1" style="color:#000080; text-align:center; font-size:15px;" >
+                        <p style="text-align:left; font-size:18px; text-align:center;">{{pachkan.Time}}</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+       <div class="mr-sec"></div>
+ <div class="graph-section border-bottom second-graph adv-imp">
+                <ion-scroll direction="x" class="wide-as-needed adv-section">
+                    <marquee class="gallery-marquee scroll-marquee" scrolldelay="5" scrollamount="3">
+                        <div class="news-service" ng-repeat="advcity in currenCityAddList">
+                            <a class="button button-clear button-positive spe-adv" ng-click="openExternalUrl(advcity.external_link)"><div><img ng-src="{{advcity.adv_banner}}" class="box-shadow" /></div></a>
+                        </div>
+                    </marquee>
+                </ion-scroll>
+
+            </div>
+    </ion-content>
+     
+        
+         
+</ion-view>

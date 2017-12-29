@@ -1,0 +1,61 @@
+﻿
+<ion-view view-title="{{temple_name}}">
+    <ion-nav-bar class='bar-light'>
+        <ion-nav-back-button></ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content>
+            <ion-slide-box on-slide-changed="slideHasChanged($index)">
+                <ion-slide>
+                    <div class="box blue"><img  ng-src="{{temple_photo  ? temple_photo : 'img/default-img.jpg'}}" /></div>
+                </ion-slide>
+                <ion-slide>
+                    <div class="box yellow"><img ng-src="{{temple_photo2  ? temple_photo2 : 'img/default-img.jpg'}}" /></div>
+                </ion-slide>
+                <ion-slide>
+                    <div class="box pink"><img ng-src="{{temple_photo3  ? temple_photo3 : 'img/default-img.jpg'}}" /></div>
+                </ion-slide>
+            </ion-slide-box>
+
+            <div class="list card login-wrap mar-40">
+                <div class="item item-body">
+                    <h2> {{temple_name}} </h2>
+                    <p> <strong>Temple Desciption </strong></p>
+                    <p class="news-cont">
+                        {{temple_info}}
+
+                    </p>
+                    <p> <strong>Address </strong></p>
+                    <p class="news-cont">
+                        {{location}}
+
+                    </p>
+                      <p> <strong>Contact No. </strong></p>
+                    <p class="news-cont">
+                        {{contact}}
+
+                    </p>
+                    <p> <strong>Food Available </strong></p>
+                    <p class="news-cont">
+                        {{food_available}}
+
+                    </p>
+                    <p> <strong>Stay Available </strong></p>
+                    <p class="news-cont">
+                        {{stay_available}}
+
+                    </p>
+                    <div class="button-bar">
+                        <a class="button twt s-width" ng-click="shareTwitter()"><i class="icon ion-social-twitter"></i></a>
+                        <a class="button fb s-width" ng-click="shareFacebook()"><i class="icon ion-social-facebook"></i></a>
+                        <!--<a class="button gp s-width"><i class="icon ion-social-googleplus"></i></a>-->
+                        <a class="button wa s-width" ng-click="shareWhatsApp()"><i class="icon ion-social-whatsapp-outline"></i></a>
+                        <a class="button mail s-width" ng-click="shareEmail()"><i class="icon ion-ios-email-outline"></i></a>
+                        <a class="button sms s-width" ng-click="shareTextSms()"><i class="icon ion-android-textsms"></i></a>
+                    </div>
+                </div>
+
+            </div>
+
+        <div class="margin-top-gallery"></div>
+        </ion-content>
+</ion-view>

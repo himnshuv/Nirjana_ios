@@ -1,0 +1,19 @@
+﻿<ion-view view-title="{{ 'Kids' | translate}}">
+    <ion-content>
+        <div class="button-bar ">
+            <a class="button button-positive" ng-click="setFilter('')">{{ 'All' | translate}}</a>
+            <a class="button button-positive" ng-click="setFilter('girl')">{{ 'Girls' | translate}}</a>
+            <a class="button button-positive" ng-click="setFilter('boy')">{{ 'Boy' | translate}}</a>
+        </div>
+       
+        <div class="list">
+            <a class="item item-avatar" ng-repeat="baby in babyNameList| filter:{baby_type:filterBy}">
+                <img src="img/kidsicon.png">
+                <h2>{{baby.baby_name}}</h2>
+                <p>{{baby.meaning}}</p>
+            </a>
+        </div>
+        <div class="margin-top-gallery"></div>
+    </ion-content>
+</ion-view>
+

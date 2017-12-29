@@ -1,0 +1,70 @@
+﻿<ion-view>
+    <ion-nav-title>
+        <span style="color:#0A2867"> {{ 'Active' | translate}}</span> {{ 'Samaj' | translate}}
+    </ion-nav-title>
+    <ion-nav-bar class='bar-light'>
+        <ion-nav-back-button></ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content>
+     <!--   <div id="smap" style="width:100%;
+                height:200px;
+                margin:10px auto;
+                box-shadow:0 3px 25px black"> 
+        </div>-->
+        <ng-form name="addViharForm" novalidate>
+            <div class="list login-wrap">
+                <label class="item item-input item-stacked-label border-none form-group">
+                    <span class="input-label">{{ 'Name' | translate}}</span>
+                    <input type="text" ng-model="data.name" placeholder="{{ 'Name' | translate}}">
+                </label>
+                <label class="item item-input item-stacked-label border-none form-group">
+                    <span class="input-label">{{ 'ContactNumber' | translate}}</span>
+                    <input type="number" ng-minlength="10" ng-maxlength="10" ng-model="data.contact" placeholder="+91 99xxxxxxxx">
+
+                </label>
+                <label class="item item-input item-stacked-label border-none form-group">
+                    <span class="input-label">{{ 'Timefrom' | translate}}</span>
+                    <input type="time" ng-model="data.timeFrom" placeholder="{{ 'Time' | translate}}">
+
+                </label>
+                <label class="item item-input item-stacked-label border-none form-group">
+                    <span class="input-label">{{ 'TimeTo' | translate}}</span>
+                    <input type="time" ng-model="data.timeTo" placeholder="{{ 'TimeTo' | translate}}">
+                </label>
+                <label class="item item-input item-stacked-label border-none form-group">
+                    <span class="input-label">{{ 'Date' | translate}}</span>
+                    <input type="date" ng-model="data.date" placeholder="{{ 'Enterdate' | translate}}">
+
+                </label>
+                <label class="item item-input item-stacked-label border-none form-group">
+                    <span class="input-label">{{ 'Kilometre' | translate}}</span>
+                    <input type="number" ng-model="data.kilometre" placeholder="{{ 'Enterkilometre' | translate}}">
+
+                </label>
+                <label class="item item-input item-stacked-label border-none form-group">
+                    <span class="input-label">{{ 'Location' | translate}}</span>
+                    <input id="pac-input" type="text" placeholder="{{ 'Location' | translate}}" data-tap-ena="false" ng-model="data.location">
+                </label>
+
+
+                <div class="assertive">
+                    
+                    <p ng-show="isVisible">{{errorText}}</p>
+
+                </div>
+
+                <div class="padding">
+                    <a class="button button-block button-positive login-btn" ng-click="saveDetails()">{{ 'Add' | translate}} </a>
+                    
+
+                </div>
+
+            </div>
+        </ng-form>
+        <div class="margin-top-gallery"></div>
+
+    </ion-content>
+
+
+
+</ion-view>

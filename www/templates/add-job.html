@@ -1,0 +1,60 @@
+﻿<ion-view>
+     <ion-nav-title style="font-size:14px;font-weight:bold;font-family: 'ARESSENCE'!important" >
+        <span style="color:#0A2867"> {{ 'Add' | translate}} </span>{{ 'AddJob' | translate}}
+    </ion-nav-title>
+    <ion-nav-bar class='bar-light'>
+        <ion-nav-back-button></ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content>
+
+        <ng-form name="addTempleForm" novalidate>
+            <div class="list login-wrap">
+                <label class="item item-input item-stacked-label border-none form-group">
+                    <span class="input-label">{{ 'JobTitle' | translate}}</span>
+                    <input type="text" name="templeName" placeholder="{{ 'JobTitle' | translate}}" ng-model="data.jobTitle" required>
+                </label>
+
+                <label class="item item-input item-stacked-label border-none form-group">
+                    <span class="input-label">{{ 'CompanyName' | translate}}</span>
+                    <input type="text" name="templeName" placeholder="{{ 'CompanyName' | translate}}" ng-model="data.companyName" required>
+                </label>
+                <label class="item item-input item-stacked-label border-none form-group">
+                    <span class="input-label">{{ 'Experiance' | translate}}</span>
+                    <input type="number" name="templeName" placeholder="{{ 'Expinmont' | translate}}" ng-model="data.experiance" required>
+                </label>
+                <label class="item item-input item-stacked-label border-none form-group">
+                    <span class="input-label">{{ 'Mobile' | translate}}</span>
+                    <input type="number" name="templeName" placeholder="{{ 'Mobile' | translate}}" ng-model="data.mobileNumber" required>
+                </label>
+                <label class="item item-input item-stacked-label border-none form-group">
+                    <span class="input-label">{{ 'ContactPerson' | translate}}</span>
+                    <input type="text" name="templeName" placeholder="{{ 'ContactPerson' | translate}}" ng-model="data.contact_person" required>
+                </label>
+                <label class="item item-input item-stacked-label border-none form-group">
+                    <span class="input-label">{{ 'JobInformation' | translate}}</span>
+                    <textarea rows="5" ng-model="data.jobDetail" class="txtarea-border-bottom"></textarea>
+                </label>
+                <label class="item item-input item-stacked-label border-none form-group">
+                    <span class="input-label">{{ 'Location' | translate}}</span>
+                    <input type="text" name="templeName" placeholder="{{ 'Location' | translate}}" ng-model="data.location" required>
+                </label>
+
+                <div class="assertive">
+                    <!---- <p ng-show="myForm.memberName.$error.required && myForm.memberName.$dirty">* Name is required</p>-->
+                    <!--<p ng-show="myForm.emailId.$invalid && myForm.emailId.$dirty">* Username must be an email address</p>-->
+                    <!----<p ng-show="myForm.mobileNo.$invalid && myForm.mobileNo.$dirty">* Invalid Mobile Number</p>>-->
+                    <!----<p ng-show="myForm.password.$error.required && myForm.password.$dirty">* Password is required</p>>-->
+                    <!---- <p ng-show="myForm.password.$error.minlength && myForm.password.$dirty">* Password must be longer than 6 characters</p>>-->
+                    <p ng-show="errorTextVisible">{{errorText}}</p>
+                </div>
+
+                <div class="padding">
+                    <a class="button button-block button-positive login-btn" ng-click="saveDetailsOnServer()">{{ 'Add' | translate}} {{ 'AddJob' | translate}} </a>
+                </div>
+
+            </div>
+
+        </ng-form>
+        <div class="margin-top-gallery"></div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,231 @@
+﻿<ion-view view-title="Create an Account">
+    <ion-content>
+        <ng-form name="myForm" novalidate>
+            <div class="logo-section">
+                <img src="img/nirjara-register-logo.png" />
+            </div>
+
+            <div class="list login-wrap">
+
+                <label class="item item-input item-stacked-label border-none form-group">
+                    <span class="input-label">{{ 'Name' | translate}}</span>
+                    <input type="text" placeholder="{{'Entername' | translate}}" name="memberName" ng-model="data.member_name" required>
+                </label>
+                <label class="item item-input item-stacked-label border-none form-group">
+                    <span class="input-label">{{ 'Username' | translate}}</span>
+                    <input type="text" name="username" placeholder="{{'PleaseenterUsername' | translate}}" ng-model="data.username" required>
+                </label>
+
+                <label class="item item-input item-stacked-label border-none form-group">
+                    <span class="input-label">{{ 'Password' | translate}}</span>
+                    <input type="password" name="password" ng-model="data.password" placeholder="**********" ng-minlength="6" required>
+                </label>
+                <label class="item item-input item-stacked-label border-none form-group">
+                    <span class="input-label">{{ 'MobileNumber' | translate}}</span>
+                    <input type="number" name="mobileNo" placeholder="{{'Entervalidno' | translate}}" ng-model="data.contact" ng-minlength="10" required>
+                </label>
+                <label class="item item-input item-stacked-label border-none form-group">
+                    <span class="input-label">{{ 'MemberType' | translate}}</span>
+
+                </label>
+                <label class="item item-input item-stacked-label border-none form-group">
+
+                    <ion-list class="ck1">
+                        <ion-radio ng-model="userType" ng-click="setIsGuruOrNot(userType)" name="userType" ng-value="'Guru'">{{ 'Guru' | translate}}</ion-radio>
+
+                    </ion-list>
+
+                    <ion-list class="ck1">
+                        <ion-radio ng-model="userType" ng-click="setIsGuruOrNot(userType)" name="userType" ng-value="'Sharawak'">{{ 'shravak' | translate}}</ion-radio>
+
+                    </ion-list>
+                </label>
+
+                <label ng-show="isGuru" class="item item-input item-stacked-label border-none form-group">
+                    <span class="input-label">{{ 'Sampraday' | translate}}</span>
+                    <select class="state-section" ng-model="mainGroupId" ng-change="getSubGroup(mainGroupId)" required>
+                        <option value="" selected="selected">{{ 'Select' | translate}}</option>
+                        <option ng-repeat="mainGroup in mainGroupList" value="{{mainGroup.main_group_id}}"> {{mainGroup.group_name}} </option>
+
+                    </select>
+                </label>
+                <label ng-show="isGuru" class="item item-input item-stacked-label border-none form-group ">
+                    <span class="input-label">{{ 'SubGroup' | translate}}</span>
+                    <select class="state-section" ng-model="subGroupId" ng-change="getGuruList(subGroupId)" required>
+                        <option value="" selected="">{{ 'Select' | translate}}</option>
+                        <option ng-repeat="subGroup in subGroupList" value="{{subGroup.sub_group_id}}"> {{subGroup.sub_group_name}} </option>
+
+                    </select>
+                </label>
+               <!-- <label class="item item-input item-stacked-label border-none form-group">
+                    <span class="input-label">Choose Language</span>
+                    <select class="state-section" name="language" ng-model="data.language" required>
+                        <option value="" selected="selected">Select Type</option>
+                        <option value="English">English</option>
+                        <option value="Hindi"> Hindi  </option>
+                        <option value="Gujrati"> Gujrati  </option>
+                    </select>
+                </label> -->
+                
+
+
+                <label ng-show="otpTextVisible" class="item item-input item-stacked-label border-none form-group">
+                    <span class="input-label">Enter OTP</span>
+                    <input type="text" placeholder="Enter OTP Number" ng-model="data.otp" required>
+                </label>
+
+                <label class="item item-input item-stacked-label border-none form-group">
+                    <span class="input-label">{{ 'Country' | translate}}</span>
+                </label>
+                <div angucomplete-alt
+                     id="rcountry"
+                     placeholder="{{ 'SelectCountry' | translate}}"
+                     pause="100"
+                     selected-object="countrySelected"
+                     local-data="countryList"
+                     search-fields="country_name"
+                     title-field="country_name"
+                     minlength="1"
+                     style="border:0.5px solid #eeeeee; padding:2px"
+                     field-required="true"
+                     input-class="form-control form-control-small form-group pad-15"
+                     match-class="highlight"
+                     initial-value="defaultCountry">
+                </div>
+                <label class="item item-input item-stacked-label border-none form-group">
+                    <span class="input-label">{{ 'State' | translate}}</span>
+                </label>
+                <div angucomplete-alt
+                     id="rstate"
+                     placeholder="{{ 'SelectState' | translate}}"
+                     pause="100"
+                     selected-object="stateSelected"
+                     local-data="stateList"
+                     search-fields="state"
+                     title-field="state"
+                     minlength="1"
+                     style="border:0.5px solid #eeeeee; padding:2px"
+                     field-required="true"
+                     input-class="form-control form-control-small form-group pad-15"
+                     match-class="highlight"
+                     initial-value="defaultState">
+                </div>
+                <label class="item item-input item-stacked-label border-none form-group ">
+                    <span class="input-label">{{ 'City' | translate}}</span>
+                </label>
+                <div angucomplete-alt
+                     id="rcity"
+                     placeholder="{{ 'SelectCity' | translate}}"
+                     pause="100"
+                     selected-object="citySelected"
+                     local-data="cityList"
+                     search-fields="city_name"
+                     title-field="city_name"
+                     minlength="1"
+                     style="border:0.5px solid #eeeeee; padding:2px"
+                     input-class="form-control form-control-small form-group pad-15"
+                     match-class="highlight"
+                     field-required="true"
+                     initial-value="defaultCity">
+                </div>
+                    <div style="clear:both;">
+                        <label class="item item-input item-stacked-label border-none form-group">
+                            <span class="input-label">{{ 'KidsBelow_18' | translate}}</span>
+                        </label>
+                        <div class="male-section" style="width:30%; float:left; margin-right:10%;">
+                            <div class="item item-input item-stacked-label border-none form-group">{{ 'Male' | translate}}</div>
+                            <input type="number" placeholder="{{'FillHere' | translate}}" name="male_members_below18" ng-model="data.male_members_below18" ; required style="border-bottom:solid 1px #ccc; margin-bottom:3%; float:left; margin-right:3%;">
+                        </div>
+                        <div class="female-section" style="width:30%; float:left; ">
+                            <div class="item item-input item-stacked-label border-none form-group">{{ 'Female' | translate}}</div>
+                            <input type="number" placeholder="{{'FillHere' | translate}}" name="female_members_below18" ng-model="data.female_members_below18" ; required style="border-bottom:solid 1px #ccc; margin-bottom:3%; float:left;">
+                        </div>
+
+                    </div>
+
+                    <div style="clear:both;">
+                        <label class="item item-input item-stacked-label border-none form-group">
+                            <span class="input-label">{{ ' MemberBet_18_25' | translate}}</span>
+                        </label>
+                        <div class="male-section" style="width:30%; float:left; margin-right:10%;">
+                            <div class="item item-input item-stacked-label border-none form-group">{{ 'Male' | translate}}</div>
+                            <input type="number" placeholder="{{'FillHere' | translate}}" name="male_members_18to25" ng-model="data.male_members_18to25" ; required style="border-bottom:solid 1px #ccc; margin-bottom:3%; float:left; margin-right:3%;">
+                        </div>
+                        <div class="female-section" style="width:30%; float:left; ">
+                            <div class="item item-input item-stacked-label border-none form-group">{{ 'Female' | translate}}</div>
+                            <input type="number" placeholder="{{'FillHere' | translate}}" name="female_members_18to25" ng-model="data.female_members_18to25" ; required style="border-bottom:solid 1px #ccc; margin-bottom:3%; float:left;">
+                        </div>
+
+                    </div>
+
+                    <div style="clear:both;">
+                        <label class="item item-input item-stacked-label border-none form-group">
+                            <span class="input-label">{{ 'MemberBet_25_40' | translate}}</span>
+                        </label>
+                        <div class="male-section" style="width:30%; float:left; margin-right:10%;">
+                            <div class="item item-input item-stacked-label border-none form-group">{{ 'Male' | translate}}</div>
+                            <input type="number" placeholder="{{'FillHere' | translate}}" name="male_members_25to40" ng-model="data.male_members_25to40" ; required style="border-bottom:solid 1px #ccc; margin-bottom:3%; float:left; margin-right:3%;">
+                        </div>
+                        <div class="female-section" style="width:30%; float:left; ">
+                            <div class="item item-input item-stacked-label border-none form-group">{{ 'Female' | translate}}</div>
+                            <input type="number" placeholder="{{'FillHere' | translate}}" name="female_members_25to40" ng-model="data.female_members_25to40" ; required style="border-bottom:solid 1px #ccc; margin-bottom:3%; float:left;">
+                        </div>
+
+                    </div>
+
+                    <div style="clear:both;">
+                        <label class="item item-input item-stacked-label border-none form-group">
+                            <span class="input-label">{{ 'MemberBet_40_60' | translate}}</span>
+                        </label>
+                        <div class="male-section" style="width:30%; float:left; margin-right:10%;">
+                            <div class="item item-input item-stacked-label border-none form-group">{{ 'Male' | translate}}</div>
+                            <input type="number" placeholder="{{'FillHere' | translate}}" name="male_members_40to60" ng-model="data.male_members_40to60" ; required style="border-bottom:solid 1px #ccc; margin-bottom:3%; float:left; margin-right:3%;">
+                        </div>
+                        <div class="female-section" style="width:30%; float:left; ">
+                            <div class="item item-input item-stacked-label border-none form-group">{{ 'Female' | translate}}</div>
+                            <input type="number" placeholder="{{'FillHere' | translate}}" name="female_members_40to60" ng-model="data.female_members_40to60" ; required style="border-bottom:solid 1px #ccc; margin-bottom:3%; float:left;">
+                        </div>
+
+                    </div>
+
+                    <div style="clear:both;">
+                        <label class="item item-input item-stacked-label border-none form-group">
+                            <span class="input-label">{{ ' MemberAbove60' | translate}}</span>
+                        </label>
+                        <div class="male-section" style="width:30%; float:left; margin-right:10%;">
+                            <div class="item item-input item-stacked-label border-none form-group">{{ 'Male' | translate}}</div>
+                            <input type="number" placeholder="{{'FillHere' | translate}}" name="male_members_above60" ng-model="data.male_members_above60" ; required style="border-bottom:solid 1px #ccc; margin-bottom:3%; float:left; margin-right:3%;">
+                        </div>
+                        <div class="female-section" style="width:30%; float:left; ">
+                            <div class="item item-input item-stacked-label border-none form-group">{{ 'Female' | translate}}</div>
+                            <input type="number" placeholder="{{'FillHere' | translate}}" name="female_members_above60" ng-model="data.female_members_above60" ; required style="border-bottom:solid 1px #ccc; margin-bottom:3%; float:left;">
+                        </div>
+
+                    </div>
+
+
+
+
+
+                    <div class="padding">
+                        <!--<button class="button button-block button-positive login-btn" ng-click="doRegistration(userType,countryId,stateId,cityId,mainGroupId,subGroupId)"> Sign Me Up ! </button>-->
+                        <button class="button button-block button-positive login-btn" ng-click="doRegistration(userType,mainGroupId,subGroupId)"> {{ 'signin' | translate}}! </button>
+                    </div>
+                    <div class="">
+                        <p>{{ 'Alreadyhaveaccount' | translate}}? <a href="#/app/login"> Sign In </a></p>
+
+                    </div>
+
+                    <div class="assertive">
+                        <p ng-show="myForm.memberName.$error.required && myForm.memberName.$dirty">* Name is required</p>
+                        <p ng-show="mmyForm.username.$error.required && myForm.username.$dirty">* Username is required</p>
+                        <p ng-show="myForm.mobileNo.$invalid && myForm.mobileNo.$dirty">* Invalid Mobile Number</p>
+                        <p ng-show="myForm.password.$error.required && myForm.password.$dirty">* Password is required</p>
+                        <p ng-show="myForm.password.$error.minlength && myForm.password.$dirty">* Password must be longer than 6 characters</p>
+                        <p ng-show="errorTextVisible">{{errorText}}</p>
+                    </div>
+                </div>
+        </ng-form>
+        <div class="margin-top-gallery"></div>
+    </ion-content>
+</ion-view>

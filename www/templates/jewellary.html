@@ -1,0 +1,68 @@
+﻿<ion-view view-title="{{ 'Jewellery'| translate}}">
+    <ion-content>
+
+         <ng-form name="jewelleryForm" novalidate>
+        <div class="list login-wrap">
+            <label class="item item-input item-stacked-label border-none form-group">
+                <span class="input-label">{{ 'Jewellery'| translate}}</span>
+
+                <select class="state-section"  name="Type" ng-model="data.type" required>
+                    <option value="" selected="selected">{{ 'SelectType'| translate}}</option>
+                    <option value="Gold">{{ 'Gold'| translate}}</option>
+                    <option value="Diamond">  {{ 'Diamond'| translate}} </option>
+                </select>
+            </label>
+
+            <label class="item item-input item-stacked-label border-none form-group">
+                <span class="input-label">  {{ 'Quantity'| translate}} </span>
+                <input type="number"  name="quantity" placeholder="{{ 'gram'| translate}}" ng-model="data.quantity" required/>
+            </label>
+
+            <label class="item item-input item-stacked-label border-none form-group">
+                <span class="input-label">{{ 'Bullion'| translate}}</span>
+                 <input type="number"  name="bullion" placeholder=" $000 " ng-model="data.bullion" required/>
+                
+            </label>
+            <label class="item item-input item-stacked-label border-none form-group">
+                <span class="input-label"> {{ 'Budget'| translate}} </span>
+                <input type="number"  name="budget" placeholder=" $000 " ng-model="data.budget" required/>
+            </label>
+          
+            <label class="item item-input item-stacked-label border-none form-group">
+                <span class="input-label">{{ 'City'| translate}}</span>
+                <input type="text"  name="city" placeholder="{{ 'City'| translate}}" ng-model="data.cityName" required>
+            </label>
+
+            <label class="item item-input item-stacked-label border-none form-group">
+                <span class="input-label">{{ 'From'| translate}}</span>
+                <input type="date"  name="from" placeholder="12:30 AM/PM" ng-model="data.fromDate" required>
+            </label>
+
+            <label class="item item-input item-stacked-label border-none form-group">
+                <span class="input-label">{{ 'To'| translate}}</span>
+                <input type="date"  name="{{ 'To'| translate}}" placeholder="12:30 AM/PM" ng-model="data.toDate" required>
+            </label>
+
+            <div class="assertive" ng-show="noerror">
+                    <p ng-show="jewelleryForm.Type.$error.required && jewelleryForm.Type.$dirty">* {{ 'Typeisrequired'| translate}}</p>
+                    <p ng-show="jewelleryForm.quantity.$error.required && jewelleryForm.quantity.$dirty">* {{ 'Quantityisrequired'| translate}}</p>
+                    <p ng-show="jewelleryForm.bullion.$error.required && jewelleryForm.bullion.$dirty">*{{ 'Bullionisrequired'| translate}}</p>
+                    <p ng-show="jewelleryForm.budget.$error.required && jewelleryForm.budget.$dirty">* {{ 'Budgetisrequired'| translate}}</p>
+                    <p ng-show="jewelleryForm.city.$error.required && jewelleryForm.city.$dirty">* {{ 'Cityisrequired'| translate}}</p>
+                    <p ng-show="jewelleryForm.from.$error.required && jewelleryForm.from.$dirty">* {{ 'FromDateisrequired'| translate}}</p>
+                    <p ng-show="jewelleryForm.to.$error.required && jewelleryForm.to.$dirty">* {{ 'ToDateisrequired'| translate}}</p>
+                 
+                    <p ng-show="errorTextVisible">{{errorMessage}}</p>
+
+                </div>
+
+            <div class="padding">
+                <a class="button button-block button-positive login-btn" ng-click="saveDetailsOnServer()"> {{ 'SendEnquiry'| translate}} </a>
+            </div>
+
+        </div>
+
+             </ng-form>
+        <div class="margin-top-gallery"></div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,47 @@
+﻿<ion-view>
+    <ion-nav-title>
+        <span style="color:#0A2867"> {{mantra.title}} </span>
+    </ion-nav-title>
+    <ion-nav-bar class='bar-light'>
+        <ion-nav-back-button></ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content style="background-image: url('http://nirjaraap.com/admin/images/mantra/pachkkhan.jpg'); background-size: cover;">
+        <!-- <div class="button-bar padding">
+            <a class="button button-positive"  style="background-color:#0A2867;" ng-click="getMantraByLang('en')">English</a>
+            <a class="button button-positive"  style="background-color:#0A2867;" ng-click="getMantraByLang('hi')">Hindi</a>
+           <!-- <a class="button button-positive"  ng-click="getMantraByLang('gu')">Gujrati</a>
+        </div>
+        <p  style="background-color: rgba(50, 50, 50, 0.7); color:#ffff00; margin:10px; padding:10px; align:center; text-align:center; font-family: 'ARESSENCE'!important">
+            <span style="font-family: 'ARESSENCE'!important" ng-bind-html="$sce.trustAsHtml(mantra.description)"></span>
+
+        </p> -->
+
+        <div class="margin-top-gallery"></div>
+    </ion-content>
+
+    <ion-footer-bar style="background-color:#000;">
+
+        <div>
+
+            <div class="tabs tabs-secondary tabs-icon-left" style="background-color:#000;">
+                <a ng-show="showPlayBtn" style="color:green" class="tab-item" ng-click="playMedia()">
+                    <i class="icon ion-ios-play"></i>
+                    Play
+                </a>
+                <a ng-show="!showPlayBtn" style="color:white" class="tab-item" ng-click="pauseMedia()">
+                    <i class="icon ion-ios-pause"></i>
+                    Pause
+                </a>
+                <a class="tab-item" style="color:red" ng-click="stopMedia()">
+                    <i class="icon ion-android-checkbox-blank"></i>
+                    Stop
+                </a>
+
+            </div>
+        </div>
+
+    </ion-footer-bar>
+
+
+</ion-view>
+

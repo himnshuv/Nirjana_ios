@@ -1,0 +1,87 @@
+<ion-view>
+    <ion-nav-title>
+        <span style="color:#0A2867"> {{ 'Jain' | translate}} </span>{{ 'Mantras' | translate}}
+    </ion-nav-title>
+
+    <ion-content class="page-bg">
+
+        <div class="top-fx-section">
+
+            <div class="pachavani-head-img">
+                <img src="img/pachakvani.png" />
+            </div>
+
+            <div class="samay-section">
+                <div class="w12">
+                    <div class="samay-wrap-title">
+                        <div class="w5">
+                            <p>{{ 'Title'| translate}}</p>
+                        </div>
+                        <div class="w6" style="padding:10px 0;">
+                            <p>{{ 'Importance'| translate}}</p>
+                        </div>
+                        <div class="w7" style="padding:10px 0;">
+                            <p>
+                                {{ 'Labh'| translate}}
+                            </p>
+                        </div>
+                        <div class="w8" style="padding:10px 0;">
+                            <p>{{ 'Vidhi'| translate}}</p>
+                        </div>
+                        <div class="w9" style="padding:10px 0;">
+                            <p>{{ 'Read'| translate}}</p>
+                        </div>
+                        <!--<div class="w10" style="padding:10px 0;">
+                            <p>{{ 'Listen'| translate}} </p>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="ovr-hdn">
+
+        <div class="scroll-section-wrap">
+
+           <!-- <div class="row songs-detail" ng-click="openAnupurviPage()">
+                 <div class="col-10"></div>
+                <div class="col-50">{{ 'Anupurvi'| translate}}</div>
+               <div class="col-20 download-icon"><div class="w4" style="color:orangered"></div></div>
+            <div class="col-20 download-icon"><div class="w4" style="color:orange"></div></div>
+            </div>-->
+
+
+            <div ng-repeat="type in mantraType">
+                <div style="background-color:orange; padding:5px">{{type.mantra_type}}</div>
+                <div class="row songs-detail" ng-repeat="jainMantra in jainMantraList |filter:{mantra_type:type.mantra_type}"  style="padding-right:0px; padding-left: 0px;">
+                    
+                    <!--  <div class="col-10">{{$index+1}}</div>-->
+                    <div class="w5" style="height:50px; background-color:#002866; color:#fff">{{jainMantra.title}}</div>
+                   
+                    <div class="{{jainMantra.importance != '' ? 'w6 book-icon-active' : 'w6 book-icon-inactive' }}" >
+                        <p style="font-size:38px;"><i class="icon-size fa fa-book" aria-hidden="true" ng-click="showImage(jainMantra.importance)"></i></p>
+                    </div>
+                    <div  class="{{jainMantra.labh != '' ? 'w7 book-icon-active' : 'w7 book-icon-inactive' }}" >
+                        <p style="font-size:38px;"><i class="icon-size fa fa-book" aria-hidden="true" ng-click="showImage(jainMantra.labh)"></i></p>
+                    </div>
+                    <div class="{{jainMantra.vidhi != '' ? 'w8 book-icon-active' : 'w8 book-icon-inactive' }}"  >
+                        <p style="font-size:38px;"><i class="icon-size fa fa-book" aria-hidden="true" ng-click="showImage(jainMantra.vidhi)"></i></p>
+                    </div>
+                    <div class="w9 book-icon-active" >
+                        <p style="font-size:38px;"><i class="icon-size fa fa-book" aria-hidden="true" ng-click="showMantra(jainMantra.title,jainMantra.description)"></i></p>
+                    </div>
+                    
+                   <!-- <div class="w10 book-icon-active" style="height:50px; color:orangered; border:none" ng-click="downloadFile(jainMantra.audio,jainMantra)">
+                      <img style="height:30px;width:30px"  ng-src="{{jainMantra.setPathUrl == '' && 'img/play.png' || 'img/play.png'}}" />
+                    </div> -->
+
+                </div>
+            </div>
+
+        </div>
+       </div>
+
+        <div class="margin-top-gallery"></div>
+    </ion-content>
+</ion-view>

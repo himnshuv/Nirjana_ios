@@ -1,0 +1,68 @@
+﻿<ion-view>
+    <ion-nav-title>
+        <span style="color:#0A2867; float:left"> {{ 'withdrawmoney' | translate}} </span> 
+          
+    </ion-nav-title>
+    <ion-content>
+
+        <ng-form name="addBusinessForm" novalidate>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3 mb-5">
+                <div class="card kl-card kl-xl kl-shine kl-show mar-40">
+
+                    
+            <span style="float:right"> <strong>{{ 'Available' | translate}} {{ 'Points' | translate}} :</strong> {{points}}</span>
+          
+
+                    <div class="card-block">
+
+
+                        <div class="list donation-wrap">
+
+
+                            <label class="item item-input item-stacked-label border-none form-group ">
+                                <span class="input-label">{{ 'Points' | translate}}</span>
+                                <input type="number" name="point" ng-model="user.point" placeholder="{{ 'Points' | translate}}">
+                            </label>
+
+                            <label class="item item-input item-stacked-label border-none form-group ">
+                                <span class="input-label">{{ 'AccountNumber' | translate}}</span>
+                                <input type="text" name="account" ng-model="user.account_number" placeholder="{{ 'AccountNumber' | translate}}">
+                            </label>
+
+                            <label class="item item-input item-stacked-label border-none form-group ">
+                                <span class="input-label">{{ 'IFSC' | translate}}</span>
+                                <input type="text" name="ifsc" ng-model="user.ifsc" placeholder="{{ 'IFSC' | translate}}">
+                            </label>
+
+                            <label class="item item-input item-stacked-label border-none form-group ">
+                                <span class="input-label">{{ 'BankName' | translate}}</span>
+                                <input type="text" name="bank" ng-model="user.bank_name" placeholder="{{ 'BankName' | translate}}">
+                            </label>
+
+                            <div class="assertive" ng-show="noerror">
+                                <p ng-show="addBusinessForm.point.$error.required && addBusinessForm.point.$dirty">* {{ 'pointsarerequired' | translate}}</p>
+                                <p ng-show="addBusinessForm.account.$error.required && addBusinessForm.account.$dirty">* {{ 'accountnumberisrequired' | translate}}</p>
+                                <p ng-show="addBusinessForm.IFSC.$error.required && addBusinessForm.IFSC.$dirty">* {{ 'ifsccoderequired' | translate}}</p>
+                                <p ng-show="addBusinessForm.bank.$error.required && addBusinessForm.bank.$dirty">* {{ 'banknameisrequired' | translate}}</p>
+
+
+                                <p ng-show="errorTextVisible">{{errorMessage}}</p>
+
+                            </div>
+
+                            <div class="padding">
+                                <a class="button button-block button-positive login-btn" ng-click="saveDetailsOnServer()"> {{ 'Save' | translate}} </a>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </ng-form>
+        <div class="margin-top-gallery"></div>
+    </ion-content>
+</ion-view>
+

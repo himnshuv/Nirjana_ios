@@ -1,0 +1,44 @@
+﻿<ion-view>
+     <ion-nav-title>
+        <span style="color:#0A2867"> {{ 'BusinessDet' | translate}} </span>{{ 'Details' | translate}}
+    </ion-nav-title>
+   <ion-nav-bar class='bar-light'>
+        <ion-nav-back-button></ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content>
+   
+        <ion-slide-box on-slide-changed="slideHasChanged($index)" ng-hide="upload_business_flag">
+ 
+            <ion-slide ng-repeat="img in imagelist">
+                <div class="box blue"><img ng-src="{{img.image  ? img.image : 'img/default-img.jpg'}}"/></div>
+            </ion-slide>
+        </ion-slide-box>
+       
+        <div class="list card">
+            <div class="item item-body">
+                <p class="user-section"> <img src="img/user-icon.png" /> {{business.business_owner_name}} </p>
+                <h2>{{business.business_title}} </h2>
+                <p class="news-cont">
+                    {{business.business_description}}
+                </p>
+                <p class="location-section"> <img src="img/location-icon.png" /> {{business.address}}</p>
+                <p class="mobile-section"> <img src="img/mobile-icon.png" /> {{business.contact_no}} </p>
+                <p> <strong> Product : </strong> {{business.product1}},{{business.product2}},{{business.product3}},{{business.product4}}</p>
+                <div class="button-bar">
+                    <a class="button twt s-width" ng-click="shareTwitter()"><i class="icon ion-social-twitter"></i></a>
+                    <a class="button fb s-width" ng-click="shareFacebook()"><i class="icon ion-social-facebook"></i></a>
+                    <!--  <a class="button gp s-width"><i class="icon ion-social-googleplus"></i></a> -->
+                    <a class="button wa s-width" ng-click="shareWhatsApp()"><i class="icon ion-social-whatsapp-outline"></i></a>
+                    <a class="button mail s-width" ng-click="shareEmail()"><i class="icon ion-ios-email-outline"></i></a>
+                    <a class="button sms s-width" ng-click="shareTextSms()"><i class="icon ion-android-textsms"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="margin-top-gallery"></div>
+    </ion-content>
+</ion-view>
+
+
+

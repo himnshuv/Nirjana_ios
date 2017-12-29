@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'ARESSENCE';
+  src: url('ARESSENCE.eot');
+  src: url('ARESSENCE.woff2') format('woff2'),
+       url('ARESSENCE.woff') format('woff'),
+       url('ARESSENCE.ttf') format('truetype'),
+       url('ARESSENCE.svg#ARESSENCE') format('svg'),
+       url('ARESSENCE.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+

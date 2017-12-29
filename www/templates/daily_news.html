@@ -1,0 +1,47 @@
+﻿<ion-view view-title="Daily News Updates">
+    <ion-content>
+       <!--  <div class="button-bar">
+            <a class="button" ng-click="setNewsFilter('')">Sports</a>
+            <a class="button" ng-click="setNewsFilter('entertainment')">Entertainment</a>
+            <a class="button" ng-click="setNewsFilter('other')">Other</a>
+             <a class="button" ng-click="setNewsFilter('')">Sports</a>
+             <a class="button" ng-click="setNewsFilter('entertainment')">Entertainment</a>
+             <a class="button" ng-click="setNewsFilter('other')">Other</a>
+        </div>-->
+       
+   <!-- <ion-scroll direction="x" class="wide-as-needed">
+          <div class="newscategory-title newCategory">
+              <a class="button button-clear button-positive" ng-click="setNewsFilter('')">All</a>
+              </div>
+          <div class="newscategory-title">
+              <a class="button button-clear button-positive" ng-repeat="categoryItem in category_list" ng-click="setNewsFilter(categoryItem.category_id)">{{categoryItem.category}}</a>
+         </div>
+
+</ion-scroll> -->   
+
+        <ion-grid>
+
+            <ion-row class="news-section-wrapper">
+                <ion-col ng-repeat="news in dailyNewsList" class="col-md-6 news-section">
+                    <a ng-click="openDetailPage(news)" class="item no-pad box-shadow border-none">
+                             
+                        <div class="mn-ht">
+                            <img  class="news-main-img" ng-src="{{news.news_photo  && news.news_photo || 'img/default-img.jpg'}}" />
+                        </div>
+                            
+                            <div class="caption-section-wrap">
+                                <h4>{{ news.news_title }}</h4>
+                                <p><img src="img/time-icon.png" /> <span>{{ news.date_time }}</span> </p>
+                                <p><img src="img/date-icon.png" /> <span>{{ news.date_added }}</span> </p>
+                            </div>
+                        
+                        </a>
+                </ion-col>
+                         
+            </ion-row>
+
+    </ion-grid>
+        <div class="margin-top-1"></div>
+  </ion-content>
+   
+</ion-view>

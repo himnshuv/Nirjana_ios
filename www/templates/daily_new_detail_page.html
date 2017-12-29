@@ -1,0 +1,33 @@
+﻿<ion-view {{newTitle}}>
+    <ion-content>
+        
+        <img class="full-image" ng-src="{{new_photo && new_photo || 'img/default-img.jpg'}}">
+        
+        <div class="list card">
+            <div class="item item-body">
+                <h2> {{newTitle}} </h2>
+                <p class="news-cont">
+                    {{ news_description }}
+
+                </p>
+                
+                <p>
+                    <a href="#" class="subdued detail_date_t"><img src="img/date-icon.png" /> <span> {{date}} </span> </a>
+                    <a href="#" class="subdued detail_date_t"><img src="img/time-icon.png" /> <span> {{time}} </span></a>
+                </p>
+                <div class="button-bar">
+                    <a class="button twt s-width"><i class="icon ion-social-twitter"></i></a>
+                    <a class="button fb s-width"><i class="icon ion-social-facebook"></i></a>
+                    <a class="button gp s-width"><i class="icon ion-social-googleplus"></i></a>
+                    <a class="button wa s-width"><i class="icon ion-social-whatsapp-outline"></i></a>
+                    <a class="button mail s-width"><i class="icon ion-ios-email-outline"></i></a>
+                    <a class="button sms s-width"><i class="icon ion-android-textsms"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="margin-top-1"></div>
+</ion-content>
+  
+</ion-view>

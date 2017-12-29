@@ -1,0 +1,61 @@
+﻿<ion-view view-title="{{ 'Internationholiday' | translate}}">
+    <ion-content>
+
+         <ng-form name="holidayForm" novalidate>
+        <div class="list login-wrap">
+            <label class="item item-input item-stacked-label border-none form-group">
+                <span class="input-label">{{ 'Destination' | translate}}</span>
+                <select class="state-section" name="destination" ng-model="data.destinationId" required>
+                    <option value="" selected="selected">{{ 'SelectDestination' | translate}}</option>
+                    <option ng-repeat="destination in destinationList" value="{{destination.destination_id}}"> {{destination.destination}} </option>
+
+                </select>
+
+            </label>
+            <label class="item item-input item-stacked-label border-none form-group">
+                <span class="input-label">{{ 'When' | translate}}</span>
+
+                <input type="date" name="from" class="dateclass placeholderclass" placeholder="Date" ng-model="data.whenDate" required>
+            </label>
+
+            <label class="item item-input item-stacked-label border-none form-group">
+                <span class="input-label">{{ 'HowManyPeople' | translate}}</span>
+                <input type="number" name="people" placeholder="1" ng-model="data.howManyPeople" required>
+            </label>
+
+            <label class="item item-input item-stacked-label border-none form-group">
+                <span class="input-label">{{ 'NoofDays' | translate}}</span>
+                <input type="number" name="days" placeholder="1" ng-model="data.noOfDays" required>
+            </label>
+
+            <label class="item item-input item-stacked-label border-none form-group">
+                <span class="input-label">{{ 'TypeRequiredFood' | translate}}</span>
+
+                <select class="state-section" name="food" ng-model="data.foodType" required>
+                    <option value="" selected="selected">  {{ 'SelectFood' | translate}}   </option>
+                    <option> {{ 'Normal' | translate}}    </option>
+                    <option> {{ ' JainFood' | translate}}   </option>
+                </select>
+            </label>
+
+              <div class="assertive" ng-show="noerror">
+                    <p ng-show="holidayForm.destination.$error.required && holidayForm.destination.$dirty">* {{ 'Destinationrequired' | translate}}</p>
+                    <p ng-show="holidayForm.from.$error.required && holidayForm.from.$dirty">* {{ 'WhenDateisrequired' | translate}}</p>
+                    <p ng-show="holidayForm.people.$error.required && holidayForm.people.$dirty">* {{ 'Howrequired' | translate}}</p>
+                    <p ng-show="holidayForm.days.$error.required && holidayForm.days.$dirty">* {{ 'Noofdaysisrequired' | translate}}</p>
+                   <p ng-show="holidayForm.food.$error.required && holidayForm.food.$dirty">* {{ 'TypeofFoodisrequired' | translate}}</p>
+                    <p ng-show="errorTextVisible">{{errorMessage}}</p>
+
+                </div>
+
+            <div class="padding">
+                <a ng-click="saveDetailsOnServer()" class="button button-block button-positive login-btn"> {{ 'SendEnquiry' | translate}}</a>
+                <!-- <button ng-click="showPopup()" class="button icon ion-edit">Show Popup</button> -->
+            </div>
+
+        </div>
+
+             </ng-form>
+        <div class="margin-top-gallery"></div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,50 @@
+﻿<ion-view view-title={{event_title}}>
+    <ion-nav-bar class='bar-light'>
+        <ion-nav-back-button></ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content>
+        <ion-slide-box on-slide-changed="slideHasChanged($index)">
+            <ion-slide>
+                <div class="box blue"><img ng-click="showImage(event_photo1_large)" style="height: 200px;max-width: 360px;width: auto;" src="{{event_photo1_large ? event_photo1_large : 'img/default-img.jpg'}}" /></div>
+            </ion-slide>
+            <ion-slide>
+                <div class="box yellow"><img ng-click="showImage(event_photo2_large)" style="height: 200px;max-width: 360px;width: auto;" class="auto-img-size" src="{{event_photo2 ? event_photo2 : 'img/default-img.jpg'}}" /></div>
+            </ion-slide>
+            <ion-slide>
+                <div class="box pink"><img ng-click="showImage(event_photo3_large)" style="height: 200px;max-width: 360px;width: auto;" class="auto-img-size" src="{{event_photo3 ? event_photo3 : 'img/default-img.jpg'}}" /></div>
+            </ion-slide>
+        </ion-slide-box>
+
+
+        <div class="list card">
+            <div class="item item-body">
+                <p><strong class="color-orange">{{ 'OrganizedBy' | translate}} : </strong> {{event_organizer}} </p>
+                <h2>{{event_title}} </h2>
+                <p class="news-cont">
+                    {{ event_description }}
+
+                </p>
+                <p><strong class="color-orange">{{ 'ContactPerson' | translate}} : </strong> {{contact_person}} </p>
+                <p><strong class="color-orange">{{ 'From' | translate}} : </strong> {{event_from}} </p>
+                <p><strong class="color-orange">{{ 'To' | translate}} : </strong> {{event_to}}</p>
+                <p><strong class="color-orange"> {{ 'Venue' | translate}}: </strong> {{event_venue}} </p>
+                <a ng-click="shareWhatsApp()">click mw</a>
+                <div class="button-bar">
+                    <a class="button twt s-width" ng-click="shareTwitter()"><i class="icon ion-social-twitter"></i></a>
+                    <a class="button fb s-width" ng-click="shareFacebook()"><i class="icon ion-social-facebook"></i></a>
+                    <!--<a class="button gp s-width"><i class="icon ion-social-googleplus"></i></a>-->
+                    <a class="button wa s-width" ng-click="shareWhatsApp()"><i class="icon ion-social-whatsapp-outline"></i></a>
+                    <a class="button mail s-width" ng-click="shareEmail()"><i class="icon ion-ios-email-outline"></i></a>
+                    <a class="button sms s-width" ng-click="shareTextSms()"><i class="icon ion-android-textsms"></i></a>
+                </div>
+            </div>
+
+        </div>
+      <div class="margin-top-gallery"></div>
+
+    </ion-content>
+
+</ion-view>
+
+
+

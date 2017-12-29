@@ -1,0 +1,35 @@
+﻿<ion-view view-title="Add Tap">
+     <ion-nav-title>
+        <span style="color:#0A2867">  {{ 'Addtday' | translate}}</span> {{ 'Day' | translate}}
+    </ion-nav-title>
+    <ion-nav-bar class='bar-light'>
+        <ion-nav-back-button></ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content>
+        <div class="list add-tap-padd">
+
+            <div class="item item-divider" ng-repeat="upvas in upvasList">
+               <div class="sec1">
+                   <p>{{upvas.tapassya_name | capitalize:'all'}}</p>
+               </div>
+               
+                <div class="sec2" ng-show="!upvas.isAdded">
+                    <a ng-click="showAlert(upvas.tapassya_id,upvas.tapassya_name)">{{ 'Add' | translate}}</a>
+                </div>
+              
+                 <div class="sec6" ng-if= "upvas.tap_status == 'add_to_record'" ng-show="upvas.isAdded">
+                    <a ng-click="showAlertRecord(upvas.tapassya_id,upvas.tapassya_name)">{{ 'AddToRecord' | translate}}</a>
+                </div>
+
+                <div class="sec3" ng-if="upvas.tap_status == 'done'">
+                    <a ng-click="showAlert(upvas.tapassya_id,upvas.tapassya_name)">{{ 'Added' | translate}} </a>
+                </div>
+               
+            </div>
+           
+        </div>
+
+        <div class="margin-top-gallery"></div>
+    
+    </ion-content>
+</ion-view>

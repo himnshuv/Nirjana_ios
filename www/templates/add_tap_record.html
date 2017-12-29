@@ -1,0 +1,30 @@
+﻿<ion-view view-title="Tap Record">
+     <ion-nav-title style="font-size:14px;font-weight:bold;font-family: 'ARESSENCE'!important">
+        <span style="color:#0A2867">  {{ 'Tap' | translate}}</span> {{ 'Record' | translate}}
+    </ion-nav-title>
+    <ion-nav-bar class='bar-light'>
+        <ion-nav-back-button></ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content>
+        <div class="list add-tap-padd">
+
+         
+            <div class="item item-divider" ng-repeat="upvas in upvasList"  ng-click="showPopUp(upvas.tapassya_name, upvas.tapassya_id)">
+               <div class="sec1">
+                   <p>{{upvas.tapassya_name | capitalize:'all'}}</p>
+               </div>
+               
+                <div ng-show="countFlag">
+                    <a class="sec3"> {{upvas.tapassya_count}} </a>
+                </div>
+               
+            </div>
+           
+           
+                       
+        </div>
+
+        <div class="margin-top-gallery"></div>
+    
+    </ion-content>
+</ion-view>

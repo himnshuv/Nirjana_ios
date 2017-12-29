@@ -1,0 +1,87 @@
+﻿<ion-view>
+     <ion-nav-title>
+        <span style="color:#0A2867"> {{ 'Add' | translate}} </span> {{ 'Events' | translate}}
+    </ion-nav-title>
+    <ion-nav-bar class='bar-light'>
+        <ion-nav-back-button></ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content>
+        
+         <ng-form name="addEventsForm" novalidate>
+        <div class="list login-wrap">
+
+
+            <label class="item item-input item-stacked-label border-none form-group pad-15">
+                <span class="input-label">{{ 'Title' | translate}}</span>
+                <input type="text" name="eventName" ng-model="data.eventName" placeholder="{{ 'Title' | translate}}" required>
+            </label>
+
+             <label class="item item-input item-stacked-label border-none form-group pad-15">
+                <span class="input-label">{{ 'Events' | translate}} {{ 'BusinessInformation' | translate}}</span>
+                <textarea rows="5" ng-model="data.eventInfo" class="txtarea-border-bottom"></textarea>
+            </label>
+
+             <label class="item item-input item-stacked-label border-none form-group pad-15">
+                <span class="input-label">{{ 'OrganizedBy' | translate}}</span>
+                <input type="text" name="person" ng-model="data.organisedBy" placeholder="{{ 'OrganizedBy' | translate}}" required>
+            </label>
+
+               <label class="item item-input item-stacked-label border-none form-group pad-15">
+                <span class="input-label">{{ 'Address' | translate}}</span>
+                <input type="text" name="address" ng-model="data.address" placeholder="{{ 'Address' | translate}}" required>
+            </label>
+
+             <label class="item item-input item-stacked-label border-none form-group pad-15">
+                <span class="input-label">{{ 'From'| translate}}</span>
+                <input type="date" name="from" placeholder="dd/mm/yyyy" ng-model="data.fromDate" required>
+            </label>
+
+            <label class="item item-input item-stacked-label border-none form-group pad-15">
+                <span class="input-label">{{ 'To'| translate}}</span>
+                <input type="date" name="to" placeholder="dd/mm/yyyy" ng-model="data.toDate" required>
+            </label>
+
+              <label class="item item-input item-stacked-label border-none form-group pad-15">
+                <span class="input-label">{{ 'TimeFrom'| translate}}</span>
+                <input type="time" name="timefrom" placeholder="12:30 AM/PM" ng-model="data.timeFrom" required>
+            </label>
+
+            <label class="item item-input item-stacked-label border-none form-group pad-15">
+                <span class="input-label">{{ 'TimeTo'| translate}}</span>
+                <input type="time" name="timeto" placeholder="12:30 AM/PM" ng-model="data.timeTo" required>
+            </label>
+
+            <label class="item item-input item-stacked-label border-none form-group pad-15">
+                <span class="input-label">{{ 'ContactPersonName' | translate}}</span>
+                <input type="text" name="person" ng-model="data.personName" placeholder="{{ 'ContactPersonName' | translate}}" required>
+            </label>
+
+         
+            <label class="item item-input item-stacked-label border-none form-group pad-15">
+                <span class="input-label">{{ 'Email' | translate}}</span>
+                <input type="email" name="email" ng-model="data.email" placeholder="demoaccount123@gmail.com" required>
+            </label>
+
+            <label class="item item-input item-stacked-label border-none form-group pad-15">
+                <span class="input-label">{{ 'Phone' | translate}}</span>
+                <input type="number" name="contact" ng-model="data.contactNo" placeholder="98xxxxxxxx" ng-minlength="10" ng-maxlength="10" required>
+            </label>
+
+
+        
+              <div class="assertive" >
+                    
+                    <p ng-show="isVisible">{{errorText}}</p>
+
+                </div>
+          
+            <div class="padding mar-30 ">
+                <a class="button button-block button-positive login-btn"ng-click="saveDetailsOnServer()"> {{ 'Add' | translate}} </a>
+            </div>
+
+        </div>
+
+             </ng-form>
+        <div class="margin-top-gallery"></div>
+    </ion-content>
+</ion-view>

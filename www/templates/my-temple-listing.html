@@ -1,0 +1,34 @@
+﻿<ion-view>
+    <ion-nav-title style="font-size:14px;font-weight:bold;font-family: 'ARESSENCE'!important">
+        <span style="color:#0A2867">{{ 'MytempleListing' | translate}}</span> {{ 'Listing' | translate}}
+    </ion-nav-title>
+    <ion-nav-bar class='bar-light'>
+        <ion-nav-back-button></ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content>
+        <div class="assertive1" ng-show="noerror">
+            <p ng-show="errorTextVisible">{{errorMessage}}</p>
+        </div>
+
+        <ion-grid>
+            <ion-row class="news-section-wrapper">
+                <ion-col ng-repeat="temple in templelists" class="col-md-6 news-section" style="background-color: #f7ef8c;">
+                    <a ng-click="openTempleDetail(temple)" class="item no-pad box-shadow border-none">
+                        <div class="mn-ht">
+                            <img class="news-main-img" src="img/default-img.jpg" />
+                        </div>
+                        <div class="caption-section-wrap">
+                            <h4>{{ temple.temple_name }}</h4>
+                            <p><i class="fa fa-mobile" aria-hidden="true"></i> <span> {{temple.contact}} </span> </p>
+                            <p><img src="img/location-icon.png" /> <span> {{temple.location}} </span> </p>
+                        </div>
+                    </a>
+                </ion-col>
+            </ion-row>
+
+        </ion-grid>
+        <div class="margin-top-gallery"></div>
+    </ion-content>
+</ion-view>
+
+

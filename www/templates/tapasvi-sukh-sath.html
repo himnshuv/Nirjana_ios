@@ -1,0 +1,58 @@
+﻿<ion-view>
+      <ion-nav-title>
+        <span style="color:#0A2867"> {{ 'tapasvi' | translate}} </span> {{ 'Sata' | translate}}
+    </ion-nav-title>
+    <ion-nav-bar class='bar-light'>
+        <ion-nav-back-button></ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content>      
+
+        <ion-row class="news-section-wrapper" style="padding-top:0 !important;">
+               <ion-col ng-repeat="tapasvi in tapasviList | filter:{ tapassya: '!0'}">
+        <div class="list">
+           <a class="item tapasvi-sukh-pro">
+           <div class="detail" >             
+                   
+           <img style="height:120px;width:120px" src="{{tapasvi.tapasvi_image}}"  ng-click="openDetailPage(tapasvi.tapasvi_id)">
+                <ul class='flg'>
+                   <li><img src="{{tapasvi.sampraday_img}}"; style="height:20px; width:30px"/></li>
+
+                </ul>   
+               
+               <!-- <ul class='flg' ng-if="!main_group_name(Sthanakwasi)">
+                   <li><img src="img/info_icon.png.png"; style="height:20px; width:30px" /></li>
+
+                </ul>-->        
+               <h2>{{tapasvi.tapasvi_name}}</h2>
+
+                    <p class="mrg0"><strong>{{ 'Age' | translate}} :</strong> {{tapasvi.tapasvi_age}} </p>
+                    <p class="mrg0"><strong>{{ 'Tap' | translate}} :</strong> {{tapasvi.tapassya_name}} </p>
+                    <p class="mrg0"><strong>{{ 'Plc' | translate}} :</strong> {{tapasvi.place}} </p>
+                    <p class="mrg0" style="float: left; margin-right: 10px !important;"><strong>{{ 'ContactNumber' | translate}} :</strong> {{tapasvi.contact}} </p> <p><img src="http://www.wileydigitalsolutions.com/dist/img/icons/paper-right.svg" style="height:20px; width:20px" ng-click="copyText('{{tapasvi.contact}}')" /></p>
+                </div>
+                <ul class="other-option" ng-if="tapasvi.liked">
+                    <li><img src="img/namskar-icon-like.png"  ng-click="postLikes(tapasvi.tapasvi_id,tapasvi.tapassya_id)"/><p class="txt-112" ng-click="openLikes(tapasvi.tapasvi_id)">{{tapasvi.total_likes}}</p></li>
+                    <li><img src="img/chat-icon.png" ng-click="openCommentPage(tapasvi.tapasvi_id)"/><p class="txt-112">{{tapasvi.total_comment}}</p></li>
+                    <li><img src="img/rupee-icon.png"  ng-click="openExternalUrl('https://paytm.com/')"/></li>
+                </ul>
+                 <ul class="other-option" ng-if="!tapasvi.liked">
+                    <li><img src="img/icon/d4-blue.svg" style="background-color:#fff" ng-click="postLikes(tapasvi.tapasvi_id,tapasvi.tapassya_id)"/><p class="txt-112">{{tapasvi.total_likes}}</p></li>
+                    <li><img src="img/chat-icon.png" ng-click="openCommentPage(tapasvi.tapasvi_id, tapasvi.tapassya_id)"/><p class="txt-112">{{tapasvi.total_comment}}</p></li>
+                    <li><img src="img/rupee-icon.png" ng-click="openExternalUrl('https://paytm.com/')" /></li>
+                </ul>
+                <ul class="other-option">
+                    <li><p class="mrg0" ng-click="openLikes(tapasvi.tapasvi_id)"> {{ 'Anumodna' | translate}}</p></li>
+                    <li><p class="mrg0"> {{ 'Comments' | translate}}</p></li>
+                    <li ><p class="mrg0"> {{ 'Prabhavna' | translate}}</p></li>
+                </ul>
+            </a>
+        </div>
+                     </ion-col>
+
+            </ion-row>
+
+        <div class="margin-top-gallery"></div>
+    </ion-content>
+</ion-view>
+ 
+              

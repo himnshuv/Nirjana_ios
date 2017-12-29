@@ -1,0 +1,42 @@
+﻿<ion-view view-title="My Business Listing">
+    <ion-content>
+        <div class="b-detail-wrap" ng-repeat="business in businessList">
+            <div class="b-detail-wrap1" ng-if="business.package_id == '1'">
+                <a >
+                    <p class="user-section"> <img src="img/user-icon.png" /> {{business.business_owner_name}} <span class="gold-batch"> <img src="img/platinum.png" /> </span></p>
+                    <p class="location-section"> <img src="img/location-icon.png" />At Post.{{business.address}}</p>
+                    <p class="mobile-section"> <img src="img/mobile-icon.png" />{{business.contact_no}} </p>
+                    <p> <strong> Product : </strong>{{business.product1}},{{business.product2}},{{business.product3}},{{business.product4}}</p>
+                    <p> <span class="edit-icon"><i class="fa fa-pencil" aria-hidden="true" ng-click="openEditbusiness(business)"></i> </span> <span class="delete-icon"><i class="fa fa-trash" aria-hidden="true" ng-click="deleteBusiness(business.business_id)"></i> </span></p>
+                 </a>
+            </div>
+            <div class="b-detail-wrap2" ng-if="business.package_id == '2'">
+                <a >
+                    <p class="user-section"> <img src="img/user-icon.png" /> {{business.business_owner_name}} <span class="gold-batch"> <img src="img/gold.png" /> </span></p>
+                    <p class="location-section"> <img src="img/location-icon.png" />At Post.{{business.business_title}}</p>
+                    <p class="mobile-section"> <img src="img/mobile-icon.png" />{{business.contact_no}} </p>
+                    <p> <strong> Product : </strong>{{business.product1}},{{business.product2}},{{business.product3}},{{business.product4}}</p>
+                    <p> <span class="edit-icon"><i class="fa fa-pencil" aria-hidden="true" ng-click="openEditbusiness(business)"></i> </span> <span class="delete-icon"><i class="fa fa-trash" aria-hidden="true" ng-click="deleteBusiness(business.business_id)"></i> </span></p>
+                 </a>
+            </div>
+            <div class="b-detail-wrap5" ng-if="business.package_id == '3'">
+                <a >
+                    <p class="user-section"> <img src="img/user-icon.png" /> {{business.business_owner_name}} <span class="gold-batch"> <img src="img/silver.png" /> </span> </p>
+                    <p class="location-section"> <img src="img/location-icon.png" />At Post.{{business.business_title}}</p>
+                    <p class="mobile-section"> <img src="img/mobile-icon.png" />{{business.contact_no}} </p>
+                    <p> <strong> Product : </strong>{{business.product1}},{{business.product2}},{{business.product3}},{{business.product4}}</p>
+                    <p> <span class="edit-icon"><i class="fa fa-pencil" aria-hidden="true" ng-click="openEditbusiness(business)"></i> </span> <span class="delete-icon"><i class="fa fa-trash" aria-hidden="true" ng-click="deleteBusiness(business.business_id)"></i> </span></p>
+                </a>
+            </div>
+            <a  ng-if="business.package_id == '4'">
+                <p class="user-section"> <img src="img/user-icon.png" /> {{business.business_owner_name}} </p>
+                <p class="location-section"> <img src="img/location-icon.png" />At Post.{{business.business_title}}</p>
+                <p class="mobile-section"> <img src="img/mobile-icon.png" />{{business.contact_no}} </p>
+                <p> <strong> Product : </strong>{{business.product1}},{{business.product2}},{{business.product3}},{{business.product4}}</p>
+                <p> <span class="edit-icon"><i class="fa fa-pencil" aria-hidden="true" ng-click="openEditbusiness(business)"></i> </span> <span class="delete-icon"><i class="fa fa-trash" aria-hidden="true" ng-click="deleteBusiness(business.business_id)"></i> </span></p>
+             </a>
+        </div>
+         <div class="margin-top-gallery"></div>
+    </ion-content>
+    
+</ion-view>

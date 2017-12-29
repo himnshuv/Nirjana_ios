@@ -1,0 +1,36 @@
+﻿<ion-view>
+    <ion-nav-title>
+        <span style="color:#0A2867"> {{ 'Setting' | translate}}  </span> 
+    </ion-nav-title>
+    <ion-content>
+        <ion-list>
+
+            <ion-item class="setting-section">
+                <div class="notification">
+                    <ion-label><span>{{ 'TempleTraking' | translate}}</span> </ion-label>
+                    <ion-toggle ng-model="templeisChecked" ng-change="setNotificationStatus(templeisChecked, templeKey)"></ion-toggle>
+                </div>
+
+                <div class="notification">
+                    <ion-label><span>{{ 'PachkanSamay' | translate}}</span> </ion-label>
+                    <ion-toggle ng-model="pachkanisChecked" ng-change="setNotificationStatus(pachkanisChecked, pachkanKey)"></ion-toggle>
+                </div>
+
+                <div class="notification">
+                    <ion-label><span>{{ 'Active' | translate}} {{'Samaj' | translate}}</span> </ion-label>
+                    <ion-toggle ng-model="activeisChecked" ng-change="setNotificationStatus(activeisChecked, activeKey)"></ion-toggle>
+                </div>
+
+                <div class="notification">
+                    <ion-label><span>{{ 'GuruTracking' | translate}}</span> </ion-label>
+                    <ion-toggle ng-model="guruisChecked" ng-change="setNotificationStatus(guruisChecked, guruKey)"></ion-toggle>
+                </div>
+            </ion-item>
+
+
+        </ion-list>
+
+        <div class="margin-top-gallery"></div>
+    </ion-content>
+</ion-view>
+

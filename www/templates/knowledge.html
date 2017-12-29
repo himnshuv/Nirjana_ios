@@ -1,0 +1,50 @@
+﻿<ion-view view-title="Add Knowledge">
+    <ion-nav-title style="font-size:14px;font-weight:bold;font-family: 'ARESSENCE'!important">
+        <span style="color:#0A2867">  {{ 'Knowledge' | translate}}</span> {{ 'Add' | translate}}
+    </ion-nav-title>
+    <ion-nav-bar class='bar-light'>
+        <ion-nav-back-button></ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content>
+
+        <div class="list add-tap-padd">
+
+            <div class="assertive2" ng-show="noerror">
+                <p ng-show="errorTextVisible">{{errorMessage}}</p>
+            </div>
+
+            <div class="item item-divider" ng-repeat="knowledg in knowledgList">
+               <div class="sec1">
+                   <p>{{knowledg.knowledge | capitalize:'all'}}</p>
+               </div>
+               
+                <div class="sec2" ng-show="!knowledg.isAdded">
+                    <a ng-click="showAlert(knowledg.knowledge_id, knowledg.knowledge)">{{ 'Add' | translate}}</a>
+                </div>
+              
+                <div class="sec3" ng-show="knowledg.isAdded">
+                    <a>{{ 'Added' | translate}}</a>
+                </div>
+               
+            </div>
+           
+           
+                       
+        </div>
+
+           <div class="item item-divider">
+               <div class="sec1 item item-input item-stacked-label border-none ">
+                    <input type="text" name="knowledge" ng-model="data.knowledge" placeholder="Add Other Knowledge">
+               
+                  </div>
+                <div class="sec-add-kw sec2" ng-show="!knowledg.isAdded">
+                    <a ng-click="addNewKnowledge(data.knowledge)">{{ 'Add' | translate}}</a>
+                </div>
+              </div>
+              
+              
+
+        <div class="margin-top-gallery"></div>
+    
+    </ion-content>
+</ion-view>

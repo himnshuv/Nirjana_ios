@@ -1,0 +1,42 @@
+﻿<ion-view view-title="{{ 'Panchakwani' | translate}}">
+    <ion-content class="page-bg">
+        <div class="pachavani-head-img">
+            <img src="img/pachakvani.png" />
+        </div>
+
+      
+        <div class="row header">
+            <div class="col-10">#</div>
+            <div class="col-50">{{ 'Title' | translate}}</div>
+            <div class="col-20">{{ 'Sthanak' | translate}}</div>
+            <div class="col-20">{{ 'Mandir' | translate}}</div>
+        </div>
+        <div class="row songs-detail abc" ng-repeat="pachkan in pachkanList">
+             
+                    <div class="col-10" ng-init="tracks=[{url : pachkan.stanak},{url : pachkan.mandir}]">1</div>
+                    <div class="col-50">{{pachkan.title}}</div>
+                    <div class="col-20">
+                        
+                    <ion-audio-track  track="tracks[0]">
+                        <ion-audio-controls>
+                            <a class="button button-icon icon" ion-audio-play></a>
+
+                            <ion-spinner icon="ios" style="position: relative; top: 8px; left: 4px">
+                            </ion-spinner>
+                        </ion-audio-controls>
+                    </ion-audio-track>
+                   </div>
+                  <div class="col-20">
+                    <ion-audio-track track="tracks[1]">
+                        <ion-audio-controls>
+                            <a class="button button-icon icon" ion-audio-play></a>
+                            <ion-spinner icon="ios" style="position: relative; top: 8px; left: 4px">
+                            </ion-spinner>
+                        </ion-audio-controls>
+                    </ion-audio-track>
+                </div>
+            </div>
+        <div class="margin-top-gallery"></div>
+    </ion-content>
+   
+</ion-view>

@@ -1,0 +1,49 @@
+﻿<ion-view>
+      <ion-nav-title>
+        <span style="color:#0A2867"> {{ 'Vihar' | translate}} </span>{{ 'Stay' | translate}}
+         <!-- <a href="#/app/coming-soon"> <img src="img/info_icon.png"; style="float:right; margin-top:13px" height="20" width="20" /></a> -->
+    </ion-nav-title>
+   
+    <ion-content>
+       
+        <div class="search-wrapper">
+            <div class="item item-input-inset auto-search-section-1" style='overflow: visible;z-index:4;'>
+                <input id="pac-input-vihar-search" type="text" placeholder="Search Location" data-tap-disabled="true" ng-change="disableTap()" ng-model="search">
+                <a ng-click="searchList(search)" class="search-icon"><i class="fa fa-search" aria-hidden="true"></i></a>
+            </div>
+        </div>
+        <div id="map-vihar-location" style="width:100%;
+            height:200px;
+            margin:10px auto;
+            box-shadow:0 3px 25px black">
+        </div>
+
+        <div class="add-vihar-btn">
+            <a href="#/app/vsadd"><i class="fa fa-plus" aria-hidden="true" style="color:orange;padding:5px"></i>{{ 'AddVihar' | translate}} </a>
+            <a href="#/app/my-stay-listing"><i class="fa fa-filter" aria-hidden="true" style="color:orange;padding:5px"></i>{{ 'PlaceAdded' | translate}}</a>
+        </div>
+
+        <div class="assertive1" ng-show="noerror">
+            <p ng-show="errorTextVisible">{{errorMessage}}</p>
+        </div>
+        <ion-grid>
+            <ion-row class="news-section-wrapper">
+                <ion-col ng-repeat="vihar in viharList" class="col-md-6 news-section">
+                    <a ng-click="openViharDetail(vihar)" class="item no-pad box-shadow border-none">
+
+                        <div class="caption-section-wrap"  style="background-color: #f7ef8c;">
+                            <h4>{{ vihar.name }}</h4>
+                            <p><i class="fa fa-mobile" aria-hidden="true"></i> <span> {{vihar.contact}} </span> </p>
+                            <p><img src="img/location-icon.png" /> <span> {{vihar.city}} </span> </p>
+                            <p><span>{{ 'JainFamily' | translate}} : {{vihar.jain_family_around}} </span> </p>
+                        </div>
+                    </a>
+                </ion-col>
+
+            </ion-row>
+
+        </ion-grid>
+
+        <div class="margin-top-gallery"></div>
+    </ion-content>
+</ion-view>

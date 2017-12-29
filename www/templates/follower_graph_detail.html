@@ -1,0 +1,39 @@
+﻿<ion-view view-title="Shravak Follower">
+     <ion-nav-title style="font-size:14px;font-weight:bold;font-family: 'ARESSENCE'!important">
+        <span style="color:#0A2867">  {{ 'shravak' | translate}}</span> {{ 'Graph' | translate}}
+    </ion-nav-title>
+    <ion-nav-bar class='bar-light'>
+        <ion-nav-back-button></ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content>
+        <div class="list add-tap-padd">
+
+         
+            <div class="item item-divider" ng-repeat="follower in followerList">
+               <div class="sec1 item-text-wrap" style="width: 80%">
+                   <p>{{follower.sub_group_name | capitalize:'all'}}</p>
+               </div>
+               
+                <div class="sec3">
+                    <a> {{follower.num_of_follower}} </a>
+                </div>
+               
+            </div>
+           
+           
+                       
+        </div>
+
+       <div class="graph-section border-bottom second-graph">
+                <ion-scroll direction="x" class="wide-as-needed adv-section">
+                    <marquee class="gallery-marquee scroll-marquee" scrolldelay="5" scrollamount="3">
+                        <div class="news-service" ng-repeat="advcity in currenCityAddList">
+                            <a class="button button-clear button-positive" ng-click="openExternalUrl(advcity.external_link)"><div><img ng-src="{{advcity.adv_banner}}" class="box-shadow" /></div></a>
+                        </div>
+                    </marquee>
+                </ion-scroll>
+
+            </div>
+    
+    </ion-content>
+</ion-view>

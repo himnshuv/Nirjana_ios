@@ -1,0 +1,26 @@
+﻿<ion-view view-title="Liked By">
+    <ion-nav-bar class='bar-light'>
+        <ion-nav-back-button></ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content>
+
+        <div class="list add-tap-padd">
+
+            <div class="assertive2" ng-show="errorTextVisible">
+                <p>{{errorMessage}}</p>
+            </div>
+
+            <div class="item item-divider">
+               <div class="sec1-comment"  ng-repeat="likes in likesList"  ng-click="openDetailPage(likes.member_id)">
+                   <p style="font-style:bold; font-size:16px" >{{likes.member_name}}</p>
+                  
+               </div>
+               
+            </div>
+           
+        </div>
+
+        <div class="margin-top-gallery"></div>
+    
+    </ion-content>
+</ion-view>

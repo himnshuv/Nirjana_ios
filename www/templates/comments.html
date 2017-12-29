@@ -1,0 +1,38 @@
+﻿<ion-view view-title="Comments">
+    <ion-nav-bar class='bar-light'>
+        <ion-nav-back-button></ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content>
+
+        <div class="list add-tap-padd">
+
+            <div class="assertive2">
+                <p ng-show="errorTextVisible">{{errorMessage}}</p>
+            </div>
+
+            <div class="item item-divider">
+               <div class="sec1-comment"  ng-repeat="comments in commentsList">
+                   <p style="font-style:bold; font-size:16px">{{comments.member_name}}</p>
+                    <p>{{comments.tapasvi_comments}}</p>
+               </div>
+               
+               
+            </div>
+           
+           
+                       
+        </div>
+
+           <div class="item item-divider">
+               <div class="sec1 item item-input item-stacked-label border-none ">
+                    <input type="text" name="comment" ng-model="data.comment" placeholder="Add Comment">
+               
+                  </div>
+                <div class="sec-add-kw sec2">
+                    <a ng-click="addNewComment(data.comment)">Add</a>
+                </div>
+              </div>
+            <div class="margin-top-gallery"></div>
+    
+    </ion-content>
+</ion-view>

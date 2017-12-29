@@ -1,0 +1,171 @@
+﻿<ion-view>
+     <ion-nav-title>
+        <span style="color:#0A2867"> {{ 'BusinessDet' | translate}} </span> {{ 'BusinessInformation' | translate}}
+    </ion-nav-title>
+    <ion-nav-bar class='bar-light'>
+        <ion-nav-back-button></ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content>
+        
+         <ng-form name="addBusinessForm" novalidate>
+
+        <div class="list login-wrap">
+
+            <label class="item item-input item-stacked-label border-none form-group pad-15">
+                <span class="input-label">{{ 'Package' | translate}}</span>
+
+                <input type="text" readonly="readonly" name="package" ng-model="data.package_name" placeholder="{{ 'Package' | translate}}" required>
+            </label>
+
+            <label class="item item-input item-stacked-label border-none form-group pad-15">
+                <span class="input-label">{{ 'BusinessCategory' | translate}}</span>
+
+                 <select class="state-section" name="subgroup" data-ng-options="businessCategory.business_category for businessCategory in businessCatList" data-ng-model="selectedBusiness"  required>
+                     <option value="" disabled selected>{{ 'BusinessCategory' | translate}}</option>
+
+                 </select>
+                          
+               
+            </label>
+
+            <label class="item item-input item-stacked-label border-none form-group pad-15">
+                <span class="input-label">{{ 'Title' | translate}}</span>
+                <input type="text" name="businaessName" ng-model="data.business_title" placeholder="{{ 'BusinessName' | translate}}" required>
+            </label>
+
+            <label class="item item-input item-stacked-label border-none form-group pad-15">
+                <span class="input-label">{{ 'Products' | translate}}</span>
+                <input type="text" name="product" ng-model="data.product1" placeholder="{{ 'Products' | translate}}" required>
+            </label>
+
+            <label class="item item-input item-stacked-label border-none form-group pad-15">
+                <span class="input-label">{{ 'Name' | translate}}</span>
+                <input type="text" name="person" ng-model="data.business_owner_name" placeholder="{{ 'ContactPersonName' | translate}}" required>
+            </label>
+
+            <label class="item item-input item-stacked-label border-none form-group pad-15">
+                <span class="input-label">{{ 'Address' | translate}}</span>
+                <input type="text" name="address" ng-model="data.address" placeholder="{{ 'Address' | translate}}" required>
+            </label>
+
+            <label class="item item-input item-stacked-label border-none form-group pad-15">
+                <span class="input-label">{{ 'Email' | translate}}</span>
+                <input type="email" name="email" ng-model="data.email_id" placeholder="demoaccount123@gmail.com" required>
+            </label>
+
+            <label class="item item-input item-stacked-label border-none form-group pad-15">
+                <span class="input-label">{{ 'Phone' | translate}}</span>
+                <input type="number" name="contact" ng-model="data.contactno" placeholder="+91 98xxxxxxxx" ng-minlength="10" ng-maxlength="10" required>
+            </label>
+
+
+            <!-- <label class="item item-input item-stacked-label border-none form-group pad-15">
+                    <span class="input-label">{{ 'ReferralCode' | translate}}</span>
+                    <input type="text" id="referral" name="referral" ng-model="data.refcode" placeholder="{{ 'ReferralCode' | translate}}" ng-blur="checkReference()">
+                </label>
+            <p class="mrg0"> {{data.ValidMember}} </p>
+           <label class="item item-input item-stacked-label border-none form-group pad-15">
+                <span class="input-label">{{ 'Country' | translate}}</span></label>
+                <div angucomplete-alt
+                     id="bcountry"
+                     placeholder="{{ 'SelectCountry' | translate}}"
+                     pause="100"
+                     selected-object="countrySelected"
+                     local-data="countryList"
+                     search-fields="country_name"
+                     title-field="country_name"
+                     minlength="1"
+                     field-required="true"
+                     input-class="form-control form-control-small form-group pad-15"
+                     match-class="highlight"
+                     initial-value="defaultCountry">
+                </div>
+            <label class="item item-input item-stacked-label border-none form-group pad-15">
+                <span class="input-label">{{ 'State' | translate}}</span></label>
+                <div angucomplete-alt
+                     id="bstate"
+                     placeholder="{{ 'SelectState' | translate}}"
+                     pause="100"
+                     selected-object="stateSelected"
+                     local-data="stateList"
+                     search-fields="state"
+                     title-field="state"
+                     minlength="1"
+                     field-required="true"
+                     input-class="form-control form-control-small form-group pad-15"
+                     match-class="highlight"
+                     initial-value="defaultState">
+                </div>
+            <label class="item item-input item-stacked-label border-none form-group pad-15">
+                <span class="input-label">{{ 'City' | translate}}</span></label>
+                <div angucomplete-alt
+                     id="bcity"
+                     placeholder="{{ 'SelectCity' | translate}}"
+                     pause="100"
+                     selected-object="citySelected"
+                     local-data="cityList"
+                     search-fields="city_name"
+                     title-field="city_name"
+                     minlength="1"
+                     input-class="form-control form-control-small form-group pad-15"
+                     match-class="highlight"
+                     field-required="true"
+                     initial-value="defaultCity">
+                </div>-->
+             <!--   <label class="item item-input item-stacked-label border-none form-group pad-15">
+                    <span class="input-label">{{ 'Country' | translate}}</span>
+
+
+                    <select class="state-section" name="country" ng-model="data.countryId" ng-change="getStates(data.countryId)" required>
+                        <option value="" selected="selected">{{ 'SelectCountry' | translate}}</option>
+                        <option ng-repeat="country in countryList" value="{{country.country_id}}"> {{country.country_name}} </option>
+
+                    </select>
+                </label>
+
+                <label class="item item-input item-stacked-label border-none form-group pad-15">
+                    <span class="input-label">{{ 'State' | translate}}</span>
+                    <select class="state-section" name="state" ng-model="data.stateId" ng-change="getcities(data.stateId)" required>
+                        <option value="" selected="selected">{{ 'SelectState' | translate}}</option>
+                        <option ng-repeat="state in stateList" value="{{state.sid}}"> {{state.state}} </option>
+
+                    </select>
+                </label>
+
+                <label class="item item-input item-stacked-label border-none form-group pad-15">
+                    <span class="input-label">{{ 'City' | translate}}</span>
+                    <select class="state-section" name="{{ 'City' | translate}}" ng-model="data.cityId" required>
+                        <option value="" selected="selected">{{ 'SelectCity' | translate}}</option>
+                        <option ng-repeat="city in cityList" value="{{city.city_id}}"> {{city.city_name}} </option>
+
+                    </select>
+                </label>-->
+                
+
+                <div class="assertive" ng-show="noerror">
+                    <p ng-show="addBusinessForm.package.$error.required && addBusinessForm.package.$dirty">* {{ 'Packageisrequired' | translate}}</p>
+                    <p ng-show="addBusinessForm.category.$error.required && addBusinessForm.category.$dirty">* {{ 'BusinessCategoryisrequired' | translate}}</p>
+                    <p ng-show="addBusinessForm.businaessName.$error.required && addBusinessForm.businaessName.$dirty">* {{ 'BusinessNameisrequired' | translate}}</p>
+                    <p ng-show="addBusinessForm.product.$error.required && addBusinessForm.product.$dirty">* {{ 'ProductNameisrequired' | translate}}</p>
+                    
+                    <p ng-show="addBusinessForm.address.$error.required && addBusinessForm.address.$dirty">*{{ 'Addressisrequired' | translate}}</p>
+                    <p ng-show="addBusinessForm.contact.$error.required && addBusinessForm.contact.$dirty">* {{ 'Phoneisrequired' | translate}}</p>
+                    <p ng-show="addBusinessForm.contact.$error.maxlength">* {{ 'Pleasemobilenumber' | translate}}</p>
+                    <p ng-show="addBusinessForm.contact.$error.minlength">* {{ 'Pleasemobilenumber' | translate}}</p>
+                    <p ng-show="addBusinessForm.email.$error.required && addBusinessForm.email.$dirty">* {{ 'Emailisrequired' | translate}}</p>
+                    <p ng-show="addBusinessForm.email.$invalid && !addBusinessForm.email.$pristine">* {{ 'Entervalidemail' | translate}}</p>
+
+                    <p ng-show="errorTextVisible">{{errorMessage}}</p>
+
+                </div>
+
+                <div class="padding mar-30 ">
+                    <a class="button button-block button-positive login-btn" ng-click="saveDetailsOnServer()"> {{ 'GO' | translate}} </a>
+                </div>
+
+</div>
+
+             </ng-form>
+        <div class="margin-top-gallery"></div>
+    </ion-content>
+</ion-view>

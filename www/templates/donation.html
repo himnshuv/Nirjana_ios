@@ -1,0 +1,50 @@
+﻿<ion-view view-title="{{ 'Donation'| translate}}">
+    <ion-content>
+       <div class="donation-section-wrap">
+           <div class="col-48 donation1">
+               <label>
+                   <input type="radio" name="fb" value="small" />
+                   <img src="img/default-img.jpg">
+                   <p> {{ 'AbhauDan' | translate}} </p>
+               </label>
+           </div>
+           <div class="col-48 donation1">
+               <label>
+                   <input type="radio" name="fb" value="big" />
+                   <img src="img/default-img.jpg">
+                   <p> {{ 'GyanKhata' | translate}} </p>
+               </label>
+           </div>
+           <div class="col-48 donation1">
+               <label>
+                   <input id="fb3" type="radio" name="fb" value="med" />
+                   <img src="img/default-img.jpg">
+                   <p> {{ 'AnnajBhandar' | translate}} </p>
+               </label>
+           </div>
+
+           <div class="col-48 donation1">
+               <label>
+                   <input id="fb4" type="radio" name="fb" value="long" />
+                   <img src="img/default-img.jpg">
+                   <p> {{ 'JeevDaya' | translate}} </p>
+               </label>
+           </div>
+       </div>
+
+        <div class="list donation-wrap">
+            <label class="item item-input item-stacked-label border-none form-group pad-15">
+                <span class="input-label">{{ 'Amount' | translate}}</span>
+                <input type="text" placeholder="{{ 'EnterAmount' | translate}}">
+            </label>
+            
+            <div class="padding">
+                <button class="button button-block button-positive login-btn"> {{ 'DonateNow' | translate}} ! </button>
+            </div>
+           
+        </div>
+
+       <div class="margin-top-gallery"></div>
+    </ion-content>
+</ion-view>
+

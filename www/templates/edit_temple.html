@@ -1,0 +1,139 @@
+﻿<ion-view>
+     <ion-nav-title>
+        <span style="color:#0A2867"> {{ 'EditProfile' | translate}} </span> {{ 'Templesthanak' | translate}}
+    </ion-nav-title>
+    <ion-nav-bar class='bar-light'>
+        <ion-nav-back-button></ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content>
+
+        <ng-form name="editTempleForm" novalidate>
+        <div class="list login-wrap">
+            <label class="item item-input item-stacked-label border-none form-group">
+                <span class="input-label">{{ 'PlaceName' | translate}}</span>
+                <input type="text" name="name" placeholder="{{ 'PlaceName' | translate}}" ng-model="templeDetail.temple_name" required>
+            </label>
+            
+
+            <label class="item item-input item-stacked-label border-none form-group">
+                <span class="input-label">{{ 'PlaceInformation' | translate}}</span>
+                <textarea rows="5" ng-model="data.temple_info" class="txtarea-border-bottom"></textarea>
+            </label>
+            <label class="item item-input item-stacked-label border-none form-group">
+                <span class="input-label">{{ 'TempleType' | translate}}</span>
+                <select class="state-section" name="type" data-ng-model="templeDetail.type" required>
+                    <option value="" selected="selected">{{ 'SelectTempleType' | translate}}</option>
+                    <option value="Sthanak"> {{ 'Sthanak' | translate}}  </option>
+                    <option value="Temple"> {{ 'Mandir' | translate}}  </option>    
+                     <option value="Digambar"> {{ 'Digambar' | translate}}  </option>
+                    <option value="Terapanthi"> {{ 'Terapanthi' | translate}}  </option>                 
+                </select>
+            </label>
+            <label class="item item-input item-stacked-label border-none form-group">
+                <span class="input-label">{{ 'FoodFacility' | translate}}</span>
+                <select class="state-section" name="food" data-ng-model="templeDetail.food_available" required ng-trim="true">
+                    <option value="" selected="selected">{{ 'Select' | translate}}</option>
+                    <option value="Yes"> {{ 'Yes' | translate}} </option>
+                    <option value="No"> {{ 'No' | translate}} </option>
+                </select>
+            </label>
+            <label class="item item-input item-stacked-label border-none form-group">
+                <span class="input-label">{{ 'StayAvailable' | translate}}</span>
+                <select class="state-section" name="stay" data-ng-model="templeDetail.stay_available" required>
+                    <option value="" selected="selected">{{ 'Select' | translate}}</option>
+                    <option value="Yes"> {{ 'Yes' | translate}}  </option>
+                    <option value="No"> {{ 'No' | translate}} </option>
+                </select>
+            </label>
+          <!--  <label class="item item-input item-stacked-label border-none form-group">
+                <span class="input-label">{{ 'Country' | translate}}</span>
+            </label>
+            <div angucomplete-alt
+                 id="tcountry"
+                 placeholder="{{ 'SelectCountry' | translate}}"
+                 pause="100"
+                 selected-object="countrySelected"
+                 local-data="countryList"
+                 search-fields="country_name"
+                 title-field="country_name"
+                 minlength="1"
+                 field-required="true"
+                 input-class="form-control form-control-small form-group"
+                 match-class="highlight"
+                 initial-value="defaultCountry">
+            </div>
+            <label class="item item-input item-stacked-label border-none form-group">
+                <span class="input-label">{{ 'State' | translate}}</span>
+            </label>
+            <div angucomplete-alt
+                 id="tstate"
+                 placeholder="{{ 'SelectState' | translate}}"
+                 pause="100"
+                 selected-object="stateSelected"
+                 local-data="stateList"
+                 search-fields="state"
+                 title-field="state"
+                 minlength="1"
+                 field-required="true"
+                 input-class="form-control form-control-small form-group"
+                 match-class="highlight"
+                 initial-value="defaultState">
+            </div>
+            <label class="item item-input item-stacked-label border-none form-group">
+                <span class="input-label">{{ 'City' | translate}}</span>
+            </label>
+            <div angucomplete-alt
+                 id="tcity"
+                 placeholder="{{ 'SelectCity' | translate}}"
+                 pause="100"
+                 selected-object="citySelected"
+                 local-data="cityList"
+                 search-fields="city_name"
+                 title-field="city_name"
+                 minlength="1"
+                 input-class="form-control form-control-small form-group"
+                 match-class="highlight"
+                 field-required="true"
+                 initial-value="defaultCity">
+            </div>-->
+            <label class="item item-input item-stacked-label border-none form-group">
+                <span class="input-label">{{ 'PinCode' | translate}}</span>
+                <input type="number" name="pin" placeholder="{{ 'EnterCode' | translate}}" ng-model="data.pincode" required>
+            </label>
+            <label class="item item-input item-stacked-label border-none form-group">
+                <span class="input-label">{{ 'ContactNumber' | translate}}</span>
+                <input type="number" name="contact" placeholder="98xxxxxxxx" ng-model="data.contact" ng-minlength="10" ng-maxlength="10" required>
+            </label>
+            <label class="item item-input item-stacked-label border-none form-group">
+                <span class="input-label">{{ 'Location' | translate}}</span>
+                <input type="text" id="pac-input-temple-location" name="location" ng-change="disableTap()" placeholder="{{ 'EnterLocation' | translate}}" data-ng-model="templeDetail.location" required>
+            </label>
+            
+             <div class="assertive" ng-show="noerror">
+                    <p ng-show="editTempleForm.templeName.$error.required && editTempleForm.templeName.$dirty">* Temple Name is required</p>
+                    <p ng-show="editTempleForm.type.$error.required && editTempleForm.type.$dirty">* Temple Type is required</p>
+                  <p ng-show="editTempleForm.food.$error.required && editTempleForm.food.$dirty">* Food Facility is required</p>
+                  <p ng-show="editTempleForm.stay.$error.required && editTempleForm.stay.$dirty">* Stay Available is required</p>
+                  <p ng-show="editTempleForm.country.$error.required && editTempleForm.country.$dirty">* Country is required</p>
+                  <p ng-show="editTempleForm.state.$error.required && editTempleForm.state.$dirty">* State is required</p>
+                  <p ng-show="editTempleForm.city.$error.required && editTempleForm.city.$dirty">* City is required</p>
+                    <p ng-show="editTempleForm.pin.$error.required && editTempleForm.pin.$dirty">* Pin Code is required</p>
+                    <p ng-show="editTempleForm.location.$error.required && editTempleForm.location.$dirty">* Location is required</p>
+                    <p ng-show="editTempleForm.contact.$error.required && editTempleForm.contact.$dirty">* Contact is required</p>
+                   <p ng-show="editTempleForm.contact.$error.maxlength">* Please Enter valid mobile number</p>
+                    <p ng-show="editTempleForm.contact.$error.minlength">* Please Enter valid mobile number</p>
+                 
+                    <p ng-show="errorTextVisible">{{errorMessage}}</p>
+
+                </div>
+          
+            <div class="padding">
+                <a class="button button-block button-positive login-btn" ng-click="saveDetailsOnServer()"> {{ 'EditProfile' | translate}} {{ 'Templesthanak' | translate}}</a>
+            </div>
+
+        </div>
+
+            </ng-form>
+     <div class="margin-top-gallery"></div>
+    </ion-content>
+</ion-view>

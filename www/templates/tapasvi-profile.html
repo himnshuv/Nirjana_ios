@@ -1,0 +1,143 @@
+﻿<ion-view view-title="Edit Profile">
+    <ion-content>
+        
+        <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3 mb-5">
+            <div class="card kl-card kl-xl kl-shine kl-show mar-40">
+
+                <div class="kl-card-block kl-xl bg-primary kl-shadow-b kl-overlay kl-slide-in kl-show">
+                   
+                <div class="kl-background">
+                    <img src="http://www.lorempixel.com/150/150/nature">
+                </div>
+                
+                    <div class="kl-card-overlay kl-card-overlay-split-q kl-dark kl-inverse">
+                        <div class="kl-card-overlay-item">
+
+                        </div>
+                        <div class="kl-card-overlay-item"></div>
+                        <div class="kl-card-overlay-item">
+                           
+                        </div>
+                        <div class="kl-card-overlay-item">
+                            
+                        </div>
+                    </div>
+
+                    <a href="#" class="kl-card-avatar kl-xl kl-pm"><img class="kl-b-danger kl-b-circle kl-b-5 kl-slow kl-shadow-br kl-reveal kl-shine" src="img/default-img.jpg"></a>
+
+                </div>
+
+                <div class="card-block">
+                   
+                    <div class="list donation-wrap">
+                        <label class="item item-input item-stacked-label border-none form-group pad-15">
+                            <span class="input-label">Name</span>
+                            <input type="text" placeholder="23-08-1992">
+                        </label>
+                        <label class="item item-input item-stacked-label border-none form-group pad-15">
+                            <span class="input-label">DOB</span>
+                            <input type="text" placeholder="23-08-1992">
+                        </label>
+
+                        <label class="item item-input item-stacked-label border-none form-group pad-15">
+                            <span class="input-label">AGE</span>
+                            <input type="text" placeholder="24 year">
+                        </label>
+
+
+                        <label class="item item-input item-stacked-label border-none form-group pad-15">
+                            <span class="input-label">Sampraday</span>
+                            <select class="state-section">
+                                <option selected>   Select Sampraday    </option>
+                                <option>   Stanak     </option>
+                                <option>   Mandir    </option>
+                            </select>
+                        </label>
+                        <label class="item item-input item-stacked-label border-none form-group pad-15">
+                            <span class="input-label">Sub-Group</span>
+                            <select class="state-section">
+                                <option selected>   Select Sub-Group   </option>
+                                <option>   Group 1     </option>
+                                <option>   Group 2    </option>
+                            </select>
+                        </label>
+                        <label class="item item-input item-stacked-label border-none form-group pad-15">
+                            <span class="input-label">Guru Name</span>
+                            <select class="state-section">
+                                <option selected>   Select Guru    </option>
+                                <option>   Mayur Yeole     </option>
+                                <option>   Mosim Khan    </option>
+                                <option>   Sumedh Hiwrale    </option>
+                                <option>   Bhushan Pawar   </option>
+                                <option>  Saddam Saiyyad    </option>
+                                <option>   Tanveer Mansuri    </option>
+                            </select>
+                        </label>
+                        <label class="item item-input item-stacked-label border-none form-group pad-15">
+                            <span class="input-label">Tapasya Record</span>
+                            <input type="text" ng-model="name" placeholder="Record">
+                        </label>
+
+                        <label class="item item-input item-stacked-label border-none form-group pad-15">
+                            <span class="input-label">Bank Account No.</span>
+                            <input type="text" ng-model="emailId" placeholder="1452xxxxxxxxxx">
+                        </label>
+
+                         <label class="item item-input item-stacked-label border-none form-group pad-15">
+                            <span class="input-label">Country</span>
+
+
+                            <select class="state-section" ng-model="countryId" ng-change="getStates(countryId)">
+                                <option value="" selected="selected">Select Country</option>
+                                <option ng-repeat="country in countryList" value="{{country.country_id}}"> {{country.country_name}} </option>
+
+                            </select>
+                        </label>
+
+                        <label class="item item-input item-stacked-label border-none form-group pad-15">
+                            <span class="input-label">State</span>
+                            <select class="state-section" ng-model="stateId" ng-change="getcities(stateId)">
+                                <option value="" selected="selected">Select State</option>
+                                <option ng-repeat="state in stateList" value="{{state.sid}}"> {{state.state}} </option>
+
+                            </select>
+                        </label>
+                    
+                        <label class="item item-input item-stacked-label border-none form-group pad-15">
+                            <span class="input-label">City</span>
+                            <select class="state-section" ng-model="cityId" ng-change="getguru(cityId)">
+                                <option value="" selected="selected">Select City</option>
+                                <option ng-repeat="city in cityList" value="{{city.city_id}}"> {{city.city_name}} </option>
+
+                            </select>
+                        </label>
+                       
+                        <label class="item item-input item-stacked-label border-none form-group pad-15">
+                            <span class="input-label">Upvas</span>
+                            
+                        </label>
+
+                        <ion-list>
+
+                            <ion-checkbox class="checkbox-balanced" ng-model="filter.red">Upvas 1</ion-checkbox>
+                            <ion-checkbox class="checkbox-balanced">Upvas 2</ion-checkbox>
+                            <ion-checkbox class="checkbox-balanced">Upvas 3</ion-checkbox>
+
+                        </ion-list>
+
+
+                            <div class="padding">
+                                <a class="button button-block button-positive login-btn" ng-click="saveDetailsOnServer()"> Save </a>
+                            </div>
+
+
+</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="margin-top-gallery"></div>
+
+    </ion-content>
+</ion-view>
+

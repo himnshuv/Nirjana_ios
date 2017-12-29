@@ -1,0 +1,31 @@
+﻿<ion-view>
+     <ion-nav-title>
+        <span style="color:#0A2867"> {{ 'Choose' | translate }} </span>{{ 'Language' | translate }}
+    </ion-nav-title>
+    <ion-content>
+
+
+        <ion-list ng-model="data.language">
+
+            <ion-item class="lang">
+
+                <ion-radio ng-model="choice" ng-value="'en-US'" ng-click="changeLanguage('en')">English</ion-radio>
+            </ion-item>
+
+            <ion-item class="lang">
+
+                <ion-radio ng-model="choice" ng-value="'hi-IN'" ng-click="changeLanguage('hi')">हिन्दी</ion-radio>
+            </ion-item>
+
+            <ion-item class="lang">
+
+                <ion-radio ng-model="choice" ng-value="'hi-IN'" ng-click="changeLanguage('gu')">ગુજરાતી</ion-radio>
+            </ion-item>
+
+         
+
+        </ion-list>
+        <div class="margin-top-gallery"></div>
+    </ion-content>
+</ion-view>
+

@@ -1,0 +1,42 @@
+﻿<ion-view>
+     <ion-nav-title>
+        <span style="color:#0A2867"> {{ 'YellowPages' | translate}} </span>{{ 'Business' | translate}}
+    </ion-nav-title>
+    <ion-content class="bg-gray">
+        <div class="add-business-btn">
+            <a href="#/app/packages" style="width:45%;"><i class="fa fa-plus" aria-hidden="true"></i>{{ 'AddBusiness' | translate}} </a>
+             <a href="#/app/edit_business_listing" style="width:45%;"><i class="fa fa-plus" aria-hidden="true"></i>{{ 'MyListing' | translate}} </a>
+        </div>
+        <div class="item item-input-inset" style='overflow: visible;z-index:4;'>
+               
+           
+            <label class="item-input-wrapper inp-wrapper">
+              
+                <angucomplete-alt data-tap-disabled="true" id="ex2"
+                                  placeholder="{{ 'Search' | translate}} {{ 'BusinessCategory' | translate}}"
+                                  pause="100"
+                                  selected-object="selected"
+                                  local-data="businessList"
+                                  search-fields="business_category"
+                                  title-field="business_category"
+                                  minlength="1"
+                                  
+                                  input-class="" />
+              
+
+            </label>
+            <a ng-click="openDetailPage(selected.originalObject.business_cat_id,selected.originalObject.business_category)" class="search-icon sear1"><i class="fa fa-search" aria-hidden="true"></i></a>
+        </div> 
+      <div class="white-bg">
+          <div class="col-48 b-service-icon" ng-repeat="businessCategory in businessCatList" ng-click="openDetailPage(businessCategory.business_cat_id,businessCategory.business_category)">
+              <a>
+                  <img ng-src="{{businessCategory.icon ? businessCategory.icon : 'img/default-img.jpg'}}" height="35" width="35"/>
+                  <p> {{businessCategory.business_category}} </p>
+              </a>
+          </div>
+         
+
+      </div>
+        <div class="margin-top-gallery"></div>
+    </ion-content>
+</ion-view>

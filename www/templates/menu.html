@@ -1,0 +1,144 @@
+<ion-side-menus enable-menu-with-back-views="true">
+    <ion-side-menu-content>
+        <ion-nav-bar class="bar-stable">
+     
+      <ion-nav-buttons side="left">
+       <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+
+    </ion-nav-bar>
+
+        <ion-nav-view name="menuContent"></ion-nav-view>
+
+          <!-- TABS -->
+        
+        <div class = "tabs tabs-icon-top" ng-class="{'tabs-item-hide': shouldHide()}">
+   <a class = "tab-item" href="#/app/playlists" ng-click="home()">
+       <img src="img/buttom/home.svg" class="tab-bottom-menu"/>
+     {{ 'Home' | translate}}
+   </a>
+	
+   <a class = "tab-item" href="#/app/add_tab" ng-click="add()">
+      <img src="img/buttom/plus.svg" class="tab-bottom-menu"/>
+      {{ 'Add' | translate}}
+   </a>
+	
+   <a class = "tab-item" href="#/app/calendar" ng-click="calendar()">
+      <img src="img/buttom/calendar.svg" class="tab-bottom-menu"/>
+      {{ 'Calendar' | translate}}
+   </a>
+
+    <a class = "tab-item" href="#/app/user_profile" ng-click="profile()">
+      <img src="img/buttom/profile.svg" class="tab-bottom-menu"/>
+    {{ 'Profile' | translate}}
+   </a>
+
+   <a class = "tab-item"  ng-click="shareTextSms()">
+      <img src="img/buttom/secretary-alert.svg" class="tab-bottom-menu"/>
+      {{ 'Security' | translate}}
+   </a>
+</div>
+    </ion-side-menu-content>
+
+   <ion-side-menu side="left">
+    <ion-header-bar class="bar-stable">
+      
+    </ion-header-bar>
+        
+        <ion-content class="custom-menu">
+            <ion-list style="height:auto" class="menu-img-section">
+               
+                <ion-item menu-close href="#/app/langauge" >
+                    <img src="img/Language.svg" width="25px"/>
+                   {{ 'Choose' | translate }} {{ 'Language' | translate}}
+                </ion-item>
+                <ion-item menu-close href="#/app/playlists">
+                    <img src="img/home-icon.svg"width="20x" height="20px"/>
+                    {{ 'Home' | translate}}
+                </ion-item>
+                <ion-item menu-close href="#/app/user_profile">
+                    <img src="img/profile.svg" width="20x" height="20px" />
+                    {{ 'Profile' | translate}}
+                </ion-item>
+                <ion-item menu-close href="#/app/guru-bhagawant-tracking">
+                    <img src="img/icon/d1.svg" width="25px" />
+                    {{ 'Bhagwant' | translate}} {{ 'Tracking' | translate}}
+                </ion-item>
+                <ion-item menu-close href="#/app/temple-listing">
+                    <img src="img/icon/d3.svg" width="25px" />
+                    {{ 'Temple' | translate}}  {{ 'Sthanak' | translate}}
+                </ion-item>
+                
+                <ion-item menu-close href="#/app/varthPachkan">
+                    <img src="img/icon/d5.svg" width="25px"/>
+                    {{ 'Vrath' | translate}} {{ 'Pachakan' | translate}}
+                </ion-item>
+                <ion-item menu-close href="#/app/jain-mantras">
+                    <img src="img/icon/d6.svg" width="25px"/>
+                   {{ 'Jain' | translate}} {{ 'Mantras' | translate}}
+                </ion-item>
+                <!--<ion-item menu-close href="#/app/donation_page">
+                    <img src="img/icon/d7.svg"  width="25px"/>
+                    {{ 'Donation' | translate}}
+                </ion-item> -->
+                <ion-item menu-close href="#/app/business">
+                    <img src="img/Business.svg" width="25px" />
+                    {{ 'YellowPages' | translate}} {{ 'Business' | translate}}
+                </ion-item>
+                <ion-item menu-close href="#/app/jain_kids_name">
+                    <img src="img/Jain-kids-name.svg" width="25px" />
+                    {{ 'Kids' | translate}}
+                </ion-item>
+            
+                <ion-item menu-close href="#/app/event_list">
+                    <img src="img/icon/d10.svg" width="25px"/>
+                    {{ 'Events' | translate}}
+                </ion-item>
+
+               <!--  <ion-item menu-close href="#/app/map">
+                    <img src="img/sidemenuimg/event_icon.png" />
+                    {{ 'Map' | translate}}
+                </ion-item>
+                <ion-item menu-close href="#/app/vstay">
+                    <img src="img/sidemenuimg/event_icon.png" />
+                    {{ 'ViharStay' | translate}}
+                </ion-item>
+                <ion-item menu-close href="#/app/guru">
+                    <img src="img/sidemenuimg/event_icon.png" />
+                    {{ 'Guru' | translate}}
+                </ion-item>
+
+                <ion-item menu-close href="#/app/active-samajseva">
+                    <img src="img/sidemenuimg/helpneededpople.png" />
+                    {{ 'Active' | translate}}
+                </ion-item>
+                <ion-item menu-close href="#/app/gyan_shala">
+                    <img src="img/icon/d8.svg" width="25px"/>
+                    {{ 'Jain' | translate}} {{ 'Library' | translate}}({{ 'Coming_Shortly' | translate}})
+                </ion-item> -->
+                
+               <ion-item menu-close href="#/app/withdrawPoint">
+                    <img src="img/icon/d7.svg" width="25px" />
+                   {{ 'withdrawmoney' | translate}}
+                </ion-item> 
+
+
+                <ion-item menu-close ng-click="shareApp()">
+                    <img src="img/share.svg" width="20x" height="20px" />
+                    {{ 'ShareApp' | translate}}
+                </ion-item> 
+                   <ion-item menu-close href="#/app/contact_us">
+                    <img src="img/contact-icon.svg" width="25px"/>
+                    {{ 'Contact' | translate}}
+                </ion-item>
+                <ion-item menu-close ng-click="logout()">
+                    <img src="img/Logout.svg" width="20px"  />
+                    {{ 'logout' | translate}}
+                </ion-item>
+
+
+            </ion-list>
+        </ion-content>
+    </ion-side-menu>
+</ion-side-menus>

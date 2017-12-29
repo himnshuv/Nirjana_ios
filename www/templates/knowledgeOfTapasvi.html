@@ -1,0 +1,28 @@
+﻿<ion-view view-title="Add Knowledge">
+    <ion-nav-title>
+        <span style="color:#0A2867">  {{ 'Knowledge' | translate}}</span> 
+    </ion-nav-title>
+    <ion-nav-bar class='bar-light'>
+        <ion-nav-back-button></ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content>
+
+        <div class="list add-tap-padd">
+
+            <div class="assertive2" ng-show="noerror">
+                <p ng-show="errorTextVisible">{{errorMessage}}</p>
+            </div>
+
+            <div class="item item-divider" ng-repeat="knowledg in userknowledgList">
+               <div class="sec1">
+                   <p>{{knowledg.knowledge | capitalize:'all'}}</p>
+               </div>
+               
+            </div>
+           
+        </div>
+
+        <div class="margin-top-gallery"></div>
+    
+    </ion-content>
+</ion-view>

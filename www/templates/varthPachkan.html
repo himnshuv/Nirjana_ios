@@ -1,0 +1,98 @@
+﻿<ion-view>
+    <ion-nav-title>
+        <span style="color:#0A2867"> {{ 'Vrath'| translate}} </span>{{ 'Pachakan'| translate}}
+    </ion-nav-title>
+
+    <ion-content>
+
+        <div class="top-fx-section">
+            <div class="search-wrapper">
+                <div class="item item-input-inset auto-search-section-1" style='overflow: visible;z-index:4;'>
+                    <input id="pac-input-varth-pachkan" type="text" placeholder="{{ 'Search' | translate}} {{ 'Location' | translate}}" data-tap-disabled="true" ng-change="disableTap()" ng-model="search">
+                    <a ng-click="saveDetails(search)" class="search-icon"><i class="fa fa-search" aria-hidden="true"></i></a>
+                </div>
+            </div>
+
+            <!--temple list for first div-->
+            <div class="samay-section">
+                <div class="samay-1 row-centered" style="background-color:#FF9800; padding:10px;">
+                    <div style="text-align:center;color:white;"><span style="color:white;font:italic!important">Current Location: </span><span style="color:#0A2867;font:italic!important">{{currentLocation}}</span></div>
+                    <div class="samay-wrap1 col-centered" ng-repeat="pachkan in pachkanList | filter: myFilter" style="align-content:center;" ng-if="pachkan.Title == 'Sunset'||pachkan.Title == 'Sunrise'">
+                        <div class="samay-wrap-title1" style="color:#000080;text-align:center; font-size:18px; width:100%;float:left;" ng-if="pachkan.Title == 'Sunrise'">
+
+                            <img src="img/sunrise.png" style="display:block; margin-right: auto; margin-left: auto; width: 23%;" />
+                            <p style="float:left; line-height: 28px; width:100%;">{{pachkan.Title}} </p>
+                        </div>
+                        <div class="samay-wrap-title1" style="color:#000080;text-align:center; font-size:18px; width:100%;float:left;" ng-if="pachkan.Title == 'Sunset'">
+
+                            <img src="img/sunset.png" style="display:block; margin-right: auto; margin-left: auto;  width: 23%;" />
+                            <p style="float: left; line-height: 28px; width:100%;">{{pachkan.Title}} </p>
+                        </div>
+                        <div class="samay-wrap-title1" style="color:#000080; text-align:center; font-size:15px;">
+                            <p style="text-align:left; font-size:18px; text-align:center;">{{pachkan.Time}}</p>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <marquee class="gallery-marquee scroll-marquee">
+                <div class="news-service" ng-repeat="adv in addList">
+                    <a class="button button-clear button-positive" ng-click="openExternalUrl(adv.external_link)"><div><img ng-src="{{adv.adv_banner}}" class="box-shadow" /></div></a>
+                </div>
+            </marquee>
+
+            <h3 style="color: #0a287b; font-size: 13px; font-weight: bold; text-align: center; text-transform: uppercase;"> {{ 'Prathyakhans' | translate}} </h3>
+            <div class="samay-section">
+                <div class="samay-1">
+                    <div class="samay-wrap-title">
+                        <div class="w1" style="background-color:#002866; color:#fff">
+                            <p>{{ 'Title'| translate}}</p>
+                        </div>
+                        <div class="w2" style="padding:10px 0; background-color:#002866; color:#fff">
+                            <p>{{ 'TempleMantr'| translate}}</p>
+                        </div>
+                        <div class="w3" style="padding:10px 0; background-color:#002866; color:#fff">
+                            <p>{{ 'Sthanak'| translate}}</p>
+                        </div>
+                        <div class="w4" style="padding:10px 0; background-color:#002866; color:#fff">
+                            <p>{{ 'Read'| translate}} </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ovr-hdn">
+            <div class="scroll-section-wrap">
+                <div class="samay-wrap" ng-repeat="pachkan in pachkanList | filter: mantraFilter">
+                    <div class="pachkan-class">
+                        <div class="w1" style="height:60px; background-color:#002866; color:#fff">
+                            <p>{{pachkan.Title}}</p>
+                            <p class="txt12">{{pachkan.Time}}</p>
+                        </div>
+                        <div class="w2" style="height:60px; background-color: #fff;" ng-click="downloadFileAndPlay(pachkan.temple_audio,$index,pachkan,'temple')">
+                            <img style="height:30px;width:30px;margin-top:10px" ng-if="showFlag!=pachkan.Title" ng-src="img/play.png" />
+                            <ion-spinner ng-if="showFlag==pachkan.Title" icon="circles" class="spinner-energized"></ion-spinner>
+                        </div>
+
+                        <div class="w3" style="height:60px; background-color: #fff;" ng-click="openReadMantraPage()">
+                            <img style="height:30px;width:30px;margin-top:10px" ng-if="showFlag!=pachkan.Title+'stanak'" ng-src="img/play.png" />
+                            <ion-spinner ng-if="showFlag==pachkan.Title+'stanak'" icon="circles" class="spinner-energized"></ion-spinner>
+                        </div>
+
+                        <div class="w4" style="height:60px; color:orange; background-color: #fff;">
+                            <p style="font-size:38px;"><i class="icon-size fa fa-book" aria-hidden="true" ng-click="openModal()"></i></p>
+                        </div>
+                    </div>
+
+                    <div class="note-text bevelBox-pachkan" style="background-color:#f7ef8c; padding:5px;">
+                        <p>{{pachkan.note}}</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="margin-top-gallery"></div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,39 @@
+﻿<ion-view view-title="{{ 'AddChaturmasMember' | translate}}">
+    <ion-content>
+
+         <ng-form name="addChaturmasForm" novalidate>
+        <div class="list login-wrap">
+            <label class="item item-input item-stacked-label border-none form-group">
+                <span class="input-label">{{ 'MaharajName' | translate}}</span>
+                <input type="text" placeholder="{{ 'MaharajName' | translate}}" ng-model="data.maharajName" required>
+            </label>
+
+            <label class="item item-input item-stacked-label border-none form-group">
+                <span class="input-label">{{ 'MemberName' | translate}}</span>
+                <input type="text" placeholder="{{ 'MemberName' | translate}}" ng-model="data.memberName" required>
+            </label>
+
+            <label class="item item-input item-stacked-label border-none form-group">
+                <span class="input-label">{{ 'Date' | translate}}</span>
+                <input type="date" placeholder="{{ 'Date' | translate}}" ng-model="data.date" required>
+            </label>
+
+            <label class="item item-input item-stacked-label border-none form-group">
+                <span class="input-label">{{ 'PlaceName' | translate}}</span>
+                <input type="text" placeholder="{{ 'PlaceName' | translate}}" ng-model="data.place" required>
+            </label>
+
+             <div class="assertive">
+                    <p ng-show="errorTextVisible">{{errorText}}</p>
+                </div>
+
+            <div class="padding">
+                <a class="button button-block button-positive login-btn" ng-click="saveDetailsOnServer()">{{ 'Addmember' | translate}} </a>
+            </div>
+
+        </div>
+
+             </ng-form>
+        <div class="margin-top-galley"></div>
+    </ion-content>
+</ion-view>

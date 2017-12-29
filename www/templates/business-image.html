@@ -1,0 +1,34 @@
+﻿<ion-view>
+     <ion-nav-title>
+        <span style="color:#0A2867"> {{ 'BusinessDet' | translate}} </span> {{ 'BusinessInformation' | translate}}
+    </ion-nav-title>
+    <ion-nav-bar class='bar-light'>
+        <ion-nav-back-button></ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content>
+
+        <label class="item item-input item-stacked-label border-none form-group">
+            <span class="input-label">{{ 'MakeAPayment' | translate}}</span>
+
+        </label>
+
+        <div class="button button-block button-positive login-btn" ng-click="makeAPayment()" ng-show="isVisible">
+            {{ 'MakeAPayment' | translate}}
+        </div>
+
+        <label class="item item-input item-stacked-label border-none form-group" ng-hide="upload_business_flag">
+            <span class="input-label">{{ 'uploadBusinessImg' | translate}}</span>
+            <span>{{ 'imageuploadnote' | translate}}</span>
+
+        </label>
+
+        <div class="button button-block button-positive login-btn" ng-click="uploadImage()" ng-hide="upload_business_flag">
+            {{ 'ChooseFile' | translate}}
+        </div>
+       
+
+
+
+        <div class="margin-top-gallery"></div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,31 @@
+﻿<ion-view>
+    <ion-nav-title style="font-size:14px;font-weight:bold;font-family: 'ARESSENCE'!important">
+        <span style="color:#0A2867">{{ 'myviharstay' | translate}}</span>{{ 'Listing' | translate}}
+    </ion-nav-title>
+    <ion-nav-bar class='bar-light'>
+        <ion-nav-back-button></ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content>
+
+        <ion-grid>
+            <ion-row class="news-section-wrapper">
+                <ion-col class="col-md-6 news-section" style="background-color: #f7ef8c;" ng-repeat="vihar in viharList">
+                    <a class="item no-pad box-shadow border-none">
+
+                        <div class="caption-section-wrap">
+                            <h4>{{vihar.name}}</h4>
+                            <p><i class="fa fa-mobile" aria-hidden="true"></i> <span> {{vihar.contact}}</span> </p>
+                            <p><img src="img/location-icon.png" /> <span>{{vihar.city}} </span> </p>
+                            <p> <span class="edit-icon"><i class="fa fa-pencil" aria-hidden="true" ng-click="openViharEdit(vihar)"></i> </span> <span class="delete-icon"><i class="fa fa-trash" aria-hidden="true" ng-click="saveDetailsOnServer(vihar.vihar_stay_id)"></i> </span></p>
+                        </div>
+                    </a>
+                </ion-col>
+
+            </ion-row>
+
+        </ion-grid>
+        <div class="margin-top-gallery"></div>
+    </ion-content>
+</ion-view>
+
+

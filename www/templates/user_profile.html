@@ -1,0 +1,212 @@
+﻿<ion-view>
+   <ion-nav-title>
+        <span style="color:#0A2867"> {{ 'Profile' | translate}} </span>
+         
+            <span style="float:right"> <strong>{{ 'Points' | translate}} :</strong> {{user.points}}</span>
+                        
+    </ion-nav-title>         
+    <ion-content>
+
+        
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3 mb-5">
+            <div class="card kl-card kl-xl kl-shine kl-show mar-40">
+                
+                <div class="profile-pic">
+                       <div class="slogan">
+                        <p> <strong>{{ 'Slogan' | translate}} :</strong> {{user.slogan}} </p>
+                    </div>
+                    <div class="pro-image">
+                        <img src="{{user.profile_image}}" />
+                   
+                    </div>
+                    
+                </div>
+                <div>
+                  <div class="show-sec" ng-hide="editflag">
+                      <div class="padding sec4">
+                      <a href="#/app/edit_profile">
+                         
+                             {{ 'EditProfile' | translate}}
+                        <!--  <div class="item-icon-right">
+                              <i class="icon ion-ios-arrow-right"></i>
+                          </div> -->
+                          
+                      </a>
+
+                  </div>
+                      <div class="padding sec4">
+                            <a href="#/app/add_tap_record">{{ 'TapassyaRecord' | translate}}</a>
+                        </div>
+                   
+                      <div class="sec4 padding">
+                            <a href="#/app/knowledge">
+                               {{ 'Knowledge' | translate}}
+                            </a>
+                           
+                        </div>
+
+                      <div class="my-post">
+                    <a ng-click="OpenPosts()"> {{ 'My' | translate}} {{ 'Posts' | translate}} </a>
+                </div>
+
+                  </div>
+
+                    
+
+                      <div class="hide-sec" ng-show="editflag">
+                      
+                      <div class="padding sec5">
+                            <a ng-click="showTap()">{{ 'TapassyaRecord' | translate}}</a>
+                        </div>
+                   
+                      <div class="sec5 padding">
+                            <a ng-click="showKnowledge()" style="border-left:solid 1px;">
+                               {{ 'Knowledge' | translate}}
+                            </a>
+                           
+                        </div>
+                  </div>
+
+                <div class="card-block">
+   
+                    <div class="list donation-wrap">
+                        <label class="item item-input item-stacked-label border-none form-group pad-15">
+                            <span class="input-label">{{ 'FullName' | translate}}</span>
+                            <input type="text" ng-model="user.member_name" readonly="readonly" placeholder="{{ 'Name' | translate}}">
+                        </label>
+
+                        <label class="item item-input item-stacked-label border-none form-group pad-15">
+                            <span class="input-label">{{ 'Father' | translate}}</span>
+                            <input type="text" ng-model="user.fathers_name" readonly="readonly" placeholder="{{ 'Father' | translate}}">
+                        </label>
+
+                       
+
+                      <label class="item item-input item-stacked-label border-none form-group pad-15">
+                            <span class="input-label">{{ 'WifeName' | translate}}</span>
+                            <input type="text" ng-model="user.wife_name" readonly="readonly" placeholder="{{ 'WifeName' | translate}}">
+                        </label>
+
+                        <label class="item item-input item-stacked-label border-none form-group pad-15">
+                            <span class="input-label">{{ 'Kids1Name' | translate}}</span>
+                            <input type="text" ng-model="user.kids1_name" readonly="readonly" placeholder="{{ 'Kids1Name' | translate}}">
+                        </label>
+
+                        <label class="item item-input item-stacked-label border-none form-group pad-15">
+                            <span class="input-label">{{ 'Kids2Name' | translate}}</span>
+                            <input type="text" ng-model="user.kids2_name" readonly="readonly" placeholder="{{ 'Kids2Name' | translate}}">
+                        </label>
+
+                        <label class="item item-input item-stacked-label border-none form-group pad-15">
+                            <span class="input-label">{{ 'Kids3Name' | translate}}</span>
+                            <input type="text" ng-model="user.kids3_name" readonly="readonly" placeholder="{{ 'Kids3Name' | translate}}">
+                        </label>
+                       
+                           
+
+                        <label class="item item-input item-stacked-label border-none form-group pad-15">
+                            <span class="input-label">{{ 'DOB' | translate}}</span>
+                            <input type="text" ng-model="user.dob" readonly="readonly" placeholder="{{ 'DOB' | translate}}">
+                        </label>
+
+                        <label class="item item-input item-stacked-label border-none form-group pad-15">
+                            <span class="input-label">{{ 'Religion' | translate}}</span>
+                            <input type="text" ng-model="user.religion" readonly="readonly" placeholder="{{ 'Religion' | translate}}">
+                        </label>
+
+                        
+                          <label class="item item-input item-stacked-label border-none form-group">
+
+                                <ion-list class="ck1">
+                                    <ion-radio ng-model="user.gender" name="gender" ng-value="'Male'" onclick="return false;">{{ 'Male' | translate}}</ion-radio>
+
+                                </ion-list>
+
+                                <ion-list class="ck1">
+                                    <ion-radio ng-model="user.gender" name="gender" ng-value="'Female'" onclick="return false;">{{ 'Female' | translate}}</ion-radio>
+
+                                </ion-list>
+                            </label>
+
+
+                        <label class="item item-input item-stacked-label border-none form-group pad-15">
+                            <span class="input-label">{{ 'Sampraday' | translate}}</span>
+
+                            <input type="text" ng-model="user.main_group_name" readonly="readonly" placeholder="{{ 'Sampraday' | translate}}">
+                        </label>
+                        <label class="item item-input item-stacked-label border-none form-group pad-15">
+                            <span class="input-label">{{ 'SubGroup' | translate}}</span>
+                            <input type="text" ng-model="user.sub_group_name" readonly="readonly" placeholder="{{ 'SubGroup' | translate}}">
+                        </label>
+                       <!-- <label class="item item-input item-stacked-label border-none form-group pad-15">
+                            <span class="input-label">{{ 'GuruName' | translate}}</span>
+                            <input type="text" ng-model="user.guru_name" readonly="readonly" placeholder="{{ 'GuruName' | translate}}">
+                        </label> -->
+
+
+                        <label class="item item-input item-stacked-label border-none form-group pad-15" ng-hide="editflag">
+                            <span class="input-label">{{ 'AccountNumber' | translate}}</span>
+                            <input type="text" ng-model="user.account_number" readonly="readonly" placeholder="1452xxxxxxxxxx">
+                        </label>
+
+                           <label class="item item-input item-stacked-label border-none form-group pad-15" ng-hide="editflag">
+                                <span class="input-label">{{ 'IFSC' | translate}}</span>
+                                <input type="text" name="ifsc" ng-model="user.ifsc" readonly="readonly" placeholder="IFSC Code" required>
+                            </label>
+
+                              <label class="item item-input item-stacked-label border-none form-group pad-15" ng-hide="editflag">
+                                <span class="input-label">{{ 'BankName' | translate}}</span>
+                                <input type="text" name="bank" ng-model="user.bank_name" readonly="readonly" placeholder="Bank Name" required>
+                            </label>
+
+                        <label class="item item-input item-stacked-label border-none form-group pad-15" ng-hide="editflag">
+                            <span class="input-label">{{ 'Mobile' | translate}}</span>
+                            <input type="text" ng-model="user.contact" readonly="readonly" placeholder="{{ 'Mobile' | translate}}">
+                        </label>
+
+                        
+                            <label class="item item-input item-stacked-label border-none form-group pad-15">
+                                <span class="input-label">{{ 'Work' | translate}}</span>
+                                <input type="text" ng-model="user.work" readonly="readonly" placeholder="" required>
+                            </label>
+
+                     <!--   <label class="item item-input item-stacked-label border-none form-group pad-15">
+                            <span class="input-label">{{ 'Anniversery' | translate}}</span>
+                            <input type="text" ng-model="user.anniversary" readonly="readonly" placeholder="{{ 'Anniversery' | translate}}">
+                        </label> -->
+
+                        <label class="item item-input item-stacked-label border-none form-group pad-15">
+                            <span class="input-label">{{ 'Country' | translate}}</span>
+                            <input type="text" ng-model="user.country" readonly="readonly" placeholder="{{ 'Country' | translate}}">
+                        </label>
+
+                        <label class="item item-input item-stacked-label border-none form-group pad-15">
+                            <span class="input-label">{{ 'State' | translate}}</span>
+                            <input type="text" ng-model="user.state" readonly="readonly" placeholder="{{ 'State' | translate}}">
+                        </label>
+                        <label class="item item-input item-stacked-label border-none form-group pad-15">
+                            <span class="input-label">{{ 'City' | translate}}</span>
+                            <input type="text" ng-model="user.member_city" readonly="readonly" placeholder="{{ 'City' | translate}}">
+                        </label>
+                        
+
+                    
+                      <!--  <ion-list>
+
+                            <ion-checkbox readonly="readonly" ng-model="true" ng-repeat="upvas in user.tapassya_id" class="checkbox-balanced">
+                                {{upvas.tapassya_name}}
+                            
+                            <span style="float:right; margin-right:10px"> {{upvas.tapassya_count}}</span>
+                        </ion-checkbox>
+                        </ion-list>-->
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="margin-top-gallery"></div>
+    </ion-content>
+</ion-view>

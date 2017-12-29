@@ -1,0 +1,35 @@
+﻿<ion-view view-title="{{ 'Chaturmas' | translate}}">
+    <ion-content>
+        <div class="search-wrapper">
+            <div class="item item-input-inset auto-search-section-1" style='overflow: visible;z-index:4;'>
+                <input id="pac-input-chaturmas" type="text" placeholder="Search Location" data-tap-disabled="true" ng-change="disableTap()" ng-model="search">
+                <a ng-click="searchList(search)" class="search-icon"><i class="fa fa-search" aria-hidden="true"></i></a>
+            </div>
+        </div>
+        <div class="assertive1" ng-show="noerror">
+            <p ng-show="errorTextVisible">{{errorMessage}}</p>
+        </div>
+
+        <ion-grid>
+
+            <ion-row class="news-section-wrapper">
+                <ion-col class="col news-section" ng-repeat="chaturmas in chaturmasList">
+                    <a class="item no-pad box-shadow border-none" ng-click="openDetailPage(chaturmas)">
+
+                        <div class="caption-section-wrap bevelBox-pachkan"  style="background-color: #f7ef8c;">
+                            <h4>{{chaturmas.sub_group}}</h4>
+                            <h5>{{chaturmas.guru_name}}</h5>
+                            <p class="mobile-section"> <img src="img/mobile-icon.png" />{{chaturmas.contact_number ? chaturmas.contact_number :'Number not available' }}</p>
+                            <p><img src="img/location-icon.png" /> <span>{{chaturmas.location}} </span> </p>
+
+                        </div>
+
+                    </a>
+                </ion-col>
+
+            </ion-row>
+
+        </ion-grid>
+       <div class="margin-top-gallery"></div>
+    </ion-content>
+</ion-view>

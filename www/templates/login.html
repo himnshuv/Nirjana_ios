@@ -1,0 +1,38 @@
+<ion-view view-title="Welcome to Nirjara Login">
+
+  <ion-content>
+      <form name="loginForm" novalidate>
+          <div class="logo-section">
+              <img src="img/nirjara-logo.png" />
+          </div>
+
+          <div class="list login-wrap">
+              <label class="item item-input item-stacked-label border-none form-group">
+                  <span class="input-label">Username</span>
+                  <input type="text" name="username" ng-model="data.username" placeholder="Username" required>
+              </label>
+              <label class="item item-input item-stacked-label border-none form-group">
+                  <span class="input-label">Password</span>
+                  <input type="password" name="password" ng-model="data.password" placeholder="**********" required>
+              </label>
+              <div class="assertive">
+                  <p ng-show="loginForm.username.$error.required && loginForm.username.$dirty">* Please enter Username</p>
+                  <p ng-show="loginForm.password.$error.required && loginForm.password.$dirty">* Password is required</p>
+                  <p ng-show="loginForm.password.$error.minlength">* Password must be longer than 6 characters</p>
+                  <p ng-show="isInvalidUser">*{{errorMessage}}</p>
+              </div>
+              <div class="padding">
+                  <button class="button button-block button-positive login-btn" type="submit" ng-click="submit()"> Login </button>
+              </div>
+              <div class="">
+                  <a class="btn-forgot text-center"ng-click="openForgetPwdPage()"><p> <img src="img/forgot-password.png" /> Forgot Password ? </p> </a>
+                  <a class="btn-forgot text-center" ng-click="newRegistration()"><p> <img src="img/register-account-icon.png" /> Create New Account </p> </a>
+                  
+              </div>
+              </div>
+
+</form>
+
+      <div class="margin-top-gallery"></div>
+</ion-content>
+</ion-view>
